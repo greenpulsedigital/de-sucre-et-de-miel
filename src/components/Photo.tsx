@@ -34,7 +34,8 @@ export function Photo({ media, size = 'card', sizes, priority, className = '', f
       sizes={sizes}
       priority={priority}
       loading={priority ? undefined : 'lazy'}
-      decoding="async"
+      decoding={priority ? 'sync' : 'async'}
+      fetchPriority={priority ? 'high' : undefined}
       className={`h-full w-full object-cover ${className}`}
     />
   )
