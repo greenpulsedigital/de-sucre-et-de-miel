@@ -27,12 +27,12 @@ export default async function HomePage() {
   return (
     <>
       {/* HERO : une image forte, pas de slider, pas de vidéo */}
-      <section className="on-dark relative isolate flex min-h-[min(85svh,52rem)] items-end overflow-hidden bg-cocoa">
+      <section className="on-dark relative isolate flex min-h-[min(88svh,54rem)] items-start overflow-hidden bg-cocoa">
         <div className="absolute inset-0 -z-10">
-          <Photo media={hero} size="wide" sizes="100vw" priority fallbackLabel="Une tarte artisanale sur un plan de travail en bois" />
+          <Photo media={hero} size="wide" sizes="100vw" priority className="object-[22%_80%] md:object-[50%_75%]" fallbackLabel="Une tarte artisanale sur un plan de travail en bois" />
         </div>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-charcoal/85 via-charcoal/45 to-charcoal/10 md:bg-gradient-to-r md:from-charcoal/80 md:via-charcoal/40 md:to-transparent" />
-        <div className="container-x pb-14 pt-32 md:pb-24">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-charcoal/85 via-charcoal/45 to-transparent" />
+        <div className="container-x pb-40 pt-16 md:pb-48 md:pt-24">
           <div className="max-w-xl">
             <p className="eyebrow" style={{ color: 'var(--color-honey-light)' }}>Montboucher-sur-Jabron · Drôme</p>
             <h1 className="mt-3" style={{ color: '#fff' }}>De Sucre &amp; de Miel</h1>
