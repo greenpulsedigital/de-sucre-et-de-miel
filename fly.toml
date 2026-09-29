@@ -1,0 +1,27 @@
+app = 'de-sucre-et-de-miel-demo'
+primary_region = 'cdg'
+
+[build]
+  [build.args]
+    NEXT_PUBLIC_SITE_URL = 'https://de-sucre-et-de-miel-demo.fly.dev'
+    SITE_NOINDEX = '1' # mode démo : retirer avant la mise en ligne réelle
+
+[env]
+  PORT = '3000'
+  SITE_NOINDEX = '1'
+
+[mounts]
+  source = 'data'
+  destination = '/data'
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

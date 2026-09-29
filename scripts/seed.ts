@@ -39,7 +39,7 @@ async function main() {
 
   // Admin : identifiants générés et écrits dans .env (jamais affichés).
   const users = await payload.find({ collection: 'users', limit: 1 })
-  if (!users.totalDocs) {
+  if (!users.totalDocs && !process.env.SEED_SKIP_ADMIN) {
     const email = process.env.SEED_ADMIN_EMAIL || 'admin@desucredemiel.local'
     const password = process.env.SEED_ADMIN_PASSWORD || crypto.randomBytes(12).toString('base64url')
     await payload.create({ collection: 'users', data: { email, password } })
@@ -95,7 +95,9 @@ async function main() {
       postalCode: '26740',
       pickupInfo: 'Retrait à l’atelier sur rendez-vous. Livraison possible dans la Drôme selon la commande.',
       hours: [{ days: 'Mardi – samedi', time: '[à renseigner]' }],
-      heroImage: await makeMedia('Photo provisoire — accueil'),
+      heroImage: fs.existsSync('scripts/hero.webp')
+        ? (await payload.create({ collection: 'media', data: { alt: 'Tarte artisanale aux fruits rouges en croisillons posée sur une roche, face à un lac de montagne et aux sommets alpins' }, filePath: 'scripts/hero.webp' })).id
+        : await makeMedia('Photo provisoire — accueil'),
       workshopImage: await makeMedia('Photo provisoire — atelier'),
     },
   })

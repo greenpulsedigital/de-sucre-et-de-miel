@@ -13,6 +13,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
+  ...(process.env.SITE_NOINDEX ? { robots: { index: false, follow: false } } : {}),
   title: { default: `${SITE.name} — ${SITE.tagline}`, template: `%s | ${SITE.name}` },
   description: 'Tartes, gâteaux, entremets et créations sur mesure, réalisés à l’atelier à Montboucher-sur-Jabron (Drôme).',
 }

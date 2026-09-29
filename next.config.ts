@@ -32,7 +32,7 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
-      { source: '/:path*', headers: baseHeaders },
+      { source: '/:path*', headers: [...baseHeaders, ...(process.env.SITE_NOINDEX ? [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] : [])] },
       ...(isProd
         ? [
             {

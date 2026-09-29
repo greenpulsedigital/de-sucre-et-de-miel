@@ -17,3 +17,14 @@ pnpm build && pnpm test:e2e # tests Playwright + axe (WCAG 2.1 AA)
 - Configurer SMTP (`.env`) ; sans SMTP, les demandes restent visibles dans admin > Demandes.
 - Ajouter de vrais avis (aucun avis fictif n'est affiché) et la sélection Instagram.
 - Persistance : `payload.db` et `media/` doivent être sur un volume sauvegardé.
+
+## Déploiement (Fly.io, démo `noindex`)
+```bash
+brew install flyctl && fly auth login
+fly apps create de-sucre-et-de-miel-demo          # adapter le nom dans fly.toml si pris
+fly volumes create data --region cdg --size 1
+fly secrets set PAYLOAD_SECRET=$(openssl rand -hex 32) ADMIN_EMAIL=vous@exemple.fr ADMIN_PASSWORD='mot-de-passe-solide'
+fly deploy
+```
+Le volume `/data` porte la base SQLite et les photos : à sauvegarder (`fly volumes snapshots`).
+Mise en ligne réelle : retirer `SITE_NOINDEX` dans `fly.toml`, régler `NEXT_PUBLIC_SITE_URL`, puis redéployer.
