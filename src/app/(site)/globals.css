@@ -318,3 +318,22 @@
     transform: none;
   }
 }
+
+/* Titres de section : mots révélés au défilement (sans JavaScript). Sans support de view(), le titre reste statique. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-word {
+      animation: scroll-word-in linear both;
+      animation-timeline: view();
+      animation-range: cover calc(var(--i) * 1%) cover calc(20% + var(--i) * 1%);
+    }
+  }
+}
+@keyframes scroll-word-in {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

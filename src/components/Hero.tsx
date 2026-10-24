@@ -90,7 +90,7 @@ export function Hero({ eyebrow, title, lead, ctas, photo }: Props) {
         <div className="flex flex-col gap-6 pb-4 md:gap-8 md:self-center md:py-20">
           <p className="eyebrow hero-fade" style={rank(0)}>{eyebrow}</p>
           <h1 aria-label={title} className="!text-[clamp(2.75rem,5.2vw,5.5rem)]">
-            <MaskedWords text={title} intro />
+            <MaskedWords text={title} wordClass="hero-word" />
           </h1>
           <p className="hero-fade max-w-xl text-lg text-charcoal md:text-xl" style={rank(1)}>{lead}</p>
           <div className="hero-fade flex flex-wrap gap-4" style={rank(2)}>{ctas}</div>
