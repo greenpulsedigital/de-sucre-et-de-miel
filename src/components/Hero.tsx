@@ -11,6 +11,8 @@ type Props = {
   lead: string
   ctas: ReactNode
   photo: ReactNode
+  /** Mention visible sur la photo (ex. « Image d’illustration »). */
+  caption?: string
 }
 
 /** Délai d'un élément de l'intro CSS, décalé par rang (`--i`). */
@@ -21,7 +23,7 @@ const rank = (i: number) => ({ '--i': i }) as CSSProperties
  * rendu, sans attendre l'hydratation, et disparaît avec prefers-reduced-motion. GSAP ne gère que la
  * parallaxe au pointeur (souris uniquement, jamais sous prefers-reduced-motion).
  */
-export function Hero({ eyebrow, title, lead, ctas, photo }: Props) {
+export function Hero({ eyebrow, title, lead, ctas, photo, caption }: Props) {
   const root = useRef<HTMLElement>(null)
   const frame = useRef<HTMLDivElement>(null)
 
@@ -99,6 +101,9 @@ export function Hero({ eyebrow, title, lead, ctas, photo }: Props) {
           <div className="hero-scale absolute inset-0">
             <div ref={frame} className="h-full w-full will-change-transform">{photo}</div>
           </div>
+          {caption && (
+            <p className="absolute bottom-4 left-4 z-10 rounded-full bg-cream/90 px-3 py-1 text-xs font-medium text-charcoal">{caption}</p>
+          )}
         </div>
       </div>
     </section>
