@@ -264,9 +264,12 @@
 }
 
 /* Intro du hero, en CSS : elle démarre au premier rendu, sans attendre l'hydratation.
-   Le cadre final reste celui du rendu statique ; sous prefers-reduced-motion, rien ne s'anime. */
-.hero-scale {
-  transform: scale(1.06);
+   Le cadre final reste celui du rendu statique ; sous prefers-reduced-motion, rien ne s'anime.
+   La photo déborde de 8 px seulement sur souris (parallaxe) : sur tactile, elle reste à la taille exacte, sans agrandissement. */
+@media (hover: hover) and (pointer: fine) {
+  .hero-scale {
+    inset: -8px;
+  }
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero-arch {
@@ -297,7 +300,7 @@
     transform: scale(1.22);
   }
   to {
-    transform: scale(1.06);
+    transform: none;
   }
 }
 @keyframes hero-word-in {

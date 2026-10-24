@@ -45,8 +45,8 @@ export function Hero({ eyebrow, title, lead, ctas, photo }: Props) {
         const r = el.getBoundingClientRect()
         const nx = (pending.clientX - r.left) / r.width - 0.5
         const ny = (pending.clientY - r.top) / r.height - 0.5
-        xTo(nx * -24)
-        yTo(ny * -16)
+        xTo(nx * -16)
+        yTo(ny * -12)
         pending = null
       }
       const onMove = (e: PointerEvent) => {
@@ -95,8 +95,8 @@ export function Hero({ eyebrow, title, lead, ctas, photo }: Props) {
           <p className="hero-fade max-w-xl text-lg text-charcoal md:text-xl" style={rank(1)}>{lead}</p>
           <div className="hero-fade flex flex-wrap gap-4" style={rank(2)}>{ctas}</div>
         </div>
-        <div className="hero-arch mx-auto h-[26rem] w-full max-w-[22rem] overflow-hidden rounded-t-[999px] md:mx-0 md:h-[41rem] md:max-w-[35rem] md:justify-self-end">
-          <div className="hero-scale h-full w-full">
+        <div className="hero-arch relative mx-auto h-[26rem] w-full max-w-[22rem] overflow-hidden rounded-t-[999px] md:mx-0 md:h-[41rem] md:max-w-[35rem] md:justify-self-end">
+          <div className="hero-scale absolute inset-0">
             <div ref={frame} className="h-full w-full will-change-transform">{photo}</div>
           </div>
         </div>
