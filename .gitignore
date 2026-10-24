@@ -10,3 +10,6 @@ test-results
 next-env.d.ts
 *.tsbuildinfo
 .vercel
+
+# Fichiers Finder
+.DS_Store
