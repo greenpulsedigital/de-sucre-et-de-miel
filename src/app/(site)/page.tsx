@@ -43,7 +43,7 @@ export default async function HomePage() {
             <Link href="/creations" className="btn btn-secondary">Voir la gamme</Link>
           </>
         }
-        photo={<Photo media={hero} size="wide" sizes="(min-width: 48rem) 35rem, 22rem" priority className="object-[60%_50%]" fallbackLabel="Une tarte alpine artisanale face aux sommets" />}
+        photo={<Photo media={hero} size="wide" quality={85} sizes="(min-width: 48rem) 35rem, 22rem" priority className="object-[60%_50%]" fallbackLabel="Une tarte alpine artisanale face aux sommets" />}
       />
 
       {/* BANDEAU */}
