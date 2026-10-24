@@ -15,7 +15,7 @@ export const ALLERGENS = [
 
 export const Products: CollectionConfig = {
   slug: 'products',
-  labels: { singular: 'Création', plural: 'Créations' },
+  labels: { singular: 'Tarte', plural: 'Tartes' },
   admin: {
     useAsTitle: 'name',
     defaultColumns: ['name', 'category', 'published', 'seasonal', 'featured'],
@@ -61,14 +61,14 @@ export const Products: CollectionConfig = {
     {
       name: 'formats',
       type: 'array',
-      label: 'Formats',
-      fields: [{ name: 'label', type: 'text', label: 'Format (ex. 6 parts)', required: true }],
+      label: 'Tailles',
+      fields: [{ name: 'label', type: 'text', label: 'Taille (ex. 28 cm · 550 g)', required: true }],
     },
     {
       type: 'row',
       fields: [
-        { name: 'seasonal', type: 'checkbox', label: 'Création de saison', defaultValue: false },
-        { name: 'featured', type: 'checkbox', label: 'Création signature (accueil)', defaultValue: false },
+        { name: 'seasonal', type: 'checkbox', label: 'Tarte de saison', defaultValue: false },
+        { name: 'featured', type: 'checkbox', label: 'Tarte signature', defaultValue: false },
         { name: 'published', type: 'checkbox', label: 'Publiée', defaultValue: true },
       ],
     },

@@ -7,11 +7,13 @@ type Props = {
   sizes: string
   priority?: boolean
   className?: string
+  fit?: 'cover' | 'contain'
+  quality?: number
   fallbackLabel?: string
 }
 
 /** Photo optimisée (AVIF/WebP via next/image). Sans image : aplat texturé, jamais de photo stock. */
-export function Photo({ media, size = 'card', sizes, priority, className = '', fallbackLabel }: Props) {
+export function Photo({ media, size = 'card', sizes, priority, className = '', fit = 'cover', quality, fallbackLabel }: Props) {
   if (!media?.url) {
     return (
       <div
@@ -32,11 +34,12 @@ export function Photo({ media, size = 'card', sizes, priority, className = '', f
       width={width}
       height={height}
       sizes={sizes}
+      quality={quality}
       priority={priority}
       loading={priority ? undefined : 'lazy'}
       decoding={priority ? 'sync' : 'async'}
       fetchPriority={priority ? 'high' : undefined}
-      className={`h-full w-full object-cover ${className}`}
+      className={`h-full w-full ${fit === 'contain' ? 'object-contain p-4' : 'object-cover'} ${className}`}
     />
   )
 }

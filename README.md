@@ -11,7 +11,7 @@ pnpm build && pnpm test:e2e # tests Playwright + axe (WCAG 2.1 AA)
 ```
 
 ## Avant mise en ligne
-- Remplacer les photos provisoires (admin > Photos, Réglages du site) et les 6 créations d'exemple.
+- Remplacer les photos provisoires (admin > Photos, Réglages du site) et les 9 tartes d'exemple (composition et allergènes à renseigner).
 - Renseigner coordonnées, horaires, adresse (Réglages du site) et compléter les mentions légales.
 - Rédiger « Notre histoire » (`src/app/(site)/maison/page.tsx`).
 - Configurer SMTP (`.env`) ; sans SMTP, les demandes restent visibles dans admin > Demandes.

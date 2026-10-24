@@ -12,8 +12,8 @@ export default function NotFound() {
         </svg>
         <p className="eyebrow mt-6">Erreur 404</p>
         <h1 className="mt-2">Cette tartelette a filé.</h1>
-        <p className="mx-auto mt-4 max-w-md text-lg">La page que vous cherchez n’est pas là où elle devrait être. Les créations, elles, vous attendent.</p>
-        <p className="mt-8"><Link href="/creations" className="btn btn-primary">Retourner aux créations</Link></p>
+        <p className="mx-auto mt-4 max-w-md text-lg">La page que vous cherchez n’est pas là où elle devrait être. Les tartes, elles, vous attendent.</p>
+        <p className="mt-8"><Link href="/creations" className="btn btn-primary">Retourner aux tartes</Link></p>
       </div>
     </section>
   )

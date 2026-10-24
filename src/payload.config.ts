@@ -1,3 +1,4 @@
+import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { buildConfig } from 'payload'
@@ -17,6 +18,20 @@ import { SiteSettings } from './globals/SiteSettings'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 
+/**
+ * Vercel : le disque du déploiement est en lecture seule. À l'exécution (pas au build ni au seed),
+ * la base embarquée est copiée dans /tmp. Démo uniquement : les écritures ne sont pas persistantes.
+ */
+function databaseUrl() {
+  const url = process.env.DATABASE_URL || 'file:./payload.db'
+  const runtime = process.env.VERCEL && process.env.NODE_ENV === 'production' && process.env.NEXT_PHASE !== 'phase-production-build'
+  if (!runtime || !url.startsWith('file:')) return url
+  const src = path.resolve(url.slice('file:'.length))
+  const dest = '/tmp/payload.db'
+  if (!fs.existsSync(dest) && fs.existsSync(src)) fs.copyFileSync(src, dest)
+  return `file:${dest}`
+}
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -30,7 +45,7 @@ export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: { outputFile: path.resolve(dirname, 'payload-types.ts') },
   db: sqliteAdapter({
-    client: { url: process.env.DATABASE_URL || 'file:./payload.db' },
+    client: { url: databaseUrl() },
     push: process.env.NODE_ENV !== 'production',
     transactionOptions: {},
   }),

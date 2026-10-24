@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import Link from 'next/link'
+import { MobileMenu } from '@/components/MobileMenu'
 import { NAV, SITE } from '@/lib/site'
 
 export function Header() {
@@ -10,9 +12,10 @@ export function Header() {
       >
         Aller au contenu
       </a>
-      <div className="container-x flex h-[4.5rem] items-center justify-between gap-6">
-        <Link href="/" className="font-display text-xl font-semibold tracking-tight text-cocoa no-underline md:text-2xl">
-          {SITE.name}
+      <div className="container-x flex h-[5.5rem] items-center md:h-[7.5rem] justify-between gap-6">
+        <Link href="/" className="flex h-full items-center gap-3 font-display text-xl font-extrabold tracking-tight text-cocoa no-underline md:text-2xl">
+          <Image src="/images/logo-dark.webp" alt="" width={120} height={120} priority className="h-full w-auto" />
+          <span className="sr-only">{SITE.name}</span>
         </Link>
 
         <nav aria-label="Navigation principale" className="hidden items-center gap-7 lg:flex">
@@ -21,39 +24,17 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/commander" className="btn btn-primary !min-h-11 !py-2">
-            Commander
+          <Link href="/contact" className="btn btn-primary !min-h-11 !py-2">
+            Nous contacter
           </Link>
         </nav>
 
-        {/* Navigation mobile sans JavaScript : <details> natif */}
+        {/* Navigation mobile : <details> natif, refermé à la navigation */}
         <div className="flex items-center gap-3 lg:hidden">
-          <Link href="/commander" className="btn btn-primary !min-h-11 !px-4 !py-2 !text-[0.95rem]">
-            Commander
+          <Link href="/professionnels" className="btn btn-primary !min-h-11 !px-4 !py-2 !text-[0.95rem]">
+            Revendeur
           </Link>
-          <details className="group relative">
-            <summary
-              className="flex h-11 min-w-11 cursor-pointer list-none items-center justify-center rounded-full border-2 border-cocoa px-3 text-sm font-semibold text-cocoa [&::-webkit-details-marker]:hidden"
-              aria-label="Menu"
-            >
-              <span className="group-open:hidden">Menu</span>
-              <span className="hidden group-open:inline">Fermer</span>
-            </summary>
-            <nav
-              aria-label="Navigation mobile"
-              className="fixed inset-x-0 top-[4.5rem] z-40 max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-cocoa/10 bg-cream px-5 pb-8 pt-4 shadow-lg"
-            >
-              <ul className="flex flex-col">
-                {[{ href: '/', label: 'Accueil' }, ...NAV, { href: '/contact', label: 'Contact' }].map((item) => (
-                  <li key={item.href} className="border-b border-cocoa/10">
-                    <Link href={item.href} className="block py-4 font-display text-xl text-cocoa no-underline">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </details>
+          <MobileMenu items={[{ href: '/', label: 'Accueil' }, ...NAV, { href: '/contact', label: 'Contact' }]} />
         </div>
       </div>
     </header>

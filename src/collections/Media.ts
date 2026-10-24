@@ -11,7 +11,7 @@ export const Media: CollectionConfig = {
     staticDir: 'media',
     mimeTypes: ['image/jpeg', 'image/png', 'image/webp', 'image/avif'],
     imageSizes: [
-      { name: 'card', width: 800, height: 600, position: 'centre' },
+      { name: 'card', width: 800, withoutEnlargement: true },
       { name: 'wide', width: 1600, withoutEnlargement: true },
     ],
     adminThumbnail: 'card',

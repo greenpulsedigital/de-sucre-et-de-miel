@@ -1,15 +1,20 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-cream: #f7f2e8;
-  --color-cream-deep: #efe6d3;
-  --color-honey: #c9973e;
-  --color-honey-light: #e6bd68; /* honey éclairci : texte accent sur fond sombre */
-  --color-honey-deep: #86601a; /* honey assombri : texte accent sur crème (contraste ≥ 4.5) */
-  --color-cocoa: #50382b;
-  --color-charcoal: #25221f;
-  --font-display: var(--font-fraunces), 'Iowan Old Style', Georgia, serif;
-  --font-sans: var(--font-inter), system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-cream: #f3f1ea;
+  --color-cream-deep: #e4e0d3;
+  /* Palette du logo : noir #15110D, sable #D8B98A, vert #6CA990, corail #C65B66 */
+  --color-honey: #d8b98a; /* sable : CTA + texte charbon (contraste > 10:1) */
+  --color-honey-light: #d8b98a; /* accent sur fond sombre */
+  --color-honey-deep: #7a5a2a; /* sable assombri : texte accent sur crème (contraste ≥ 4.5) */
+  --color-cocoa: #15110d;
+  --color-charcoal: #15110d;
+  --color-sage: #6ca990;
+  --color-sage-deep: #dcefe6; /* fond clair du badge « Disponible » */
+  --color-coral: #c65b66;
+  --color-coral-deep: #a23f4b; /* corail assombri : texte sur crème (contraste ≥ 4.5) */
+  --font-display: var(--font-face-display), system-ui, sans-serif;
+  --font-sans: var(--font-face-sans), system-ui, -apple-system, 'Segoe UI', sans-serif;
   --breakpoint-xs: 30rem;
 }
 
@@ -19,7 +24,17 @@
     color: var(--color-charcoal);
     font-family: var(--font-sans);
     scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem; /* hauteur de l'en-tête collant */
     -webkit-text-size-adjust: 100%;
+  }
+  @media (min-width: 48rem) {
+    html {
+      scroll-padding-top: 7.5rem;
+    }
+  }
+  /* Lenis gère le défilement lissé : le scroll natif ne doit pas s'y ajouter */
+  html.lenis {
+    scroll-behavior: auto;
   }
   body {
     min-height: 100dvh;
@@ -36,21 +51,26 @@
   h3 {
     font-family: var(--font-display);
     color: var(--color-cocoa);
-    line-height: 1.12;
-    letter-spacing: -0.01em;
+    line-height: 1;
+    letter-spacing: -0.03em;
     text-wrap: balance;
   }
   h1 {
-    font-size: clamp(2.25rem, 5vw + 1rem, 4.25rem);
-    font-weight: 500;
+    font-size: clamp(2.75rem, 6vw + 1rem, 6.25rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
   }
   h2 {
-    font-size: clamp(1.75rem, 2.5vw + 1rem, 2.75rem);
-    font-weight: 500;
+    font-size: clamp(2rem, 3vw + 1rem, 3.75rem);
+    font-weight: 800;
   }
   h3 {
     font-size: 1.35rem;
-    font-weight: 500;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+  .on-dark :is(h1, h2, h3) {
+    color: #fff;
   }
   p {
     text-wrap: pretty;
@@ -92,7 +112,7 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 600;
-    color: var(--color-honey-deep);
+    color: var(--color-coral-deep);
   }
   .prose-tight > * + * {
     margin-top: 1rem;
@@ -131,7 +151,14 @@
     color: var(--color-charcoal);
   }
   .btn-primary:hover {
-    background: #d8a94e;
+    background: #e4c99f;
+  }
+  .btn-dark {
+    background: var(--color-charcoal);
+    color: var(--color-cream);
+  }
+  .btn-dark:hover {
+    background: #2f261d;
   }
   .btn-secondary {
     border-color: currentColor;

@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cat = await getCategoryBySlug(slug)
   if (cat) {
     return buildMetadata({
-      title: `${cat.name} artisanales dans la Drôme`,
-      description: cat.description || `${cat.name} faites à l’atelier De Sucre & de Miel, Montboucher-sur-Jabron.`,
+      title: `${cat.name} pour professionnels`,
+      description: cat.description || `${cat.name} de l’atelier De Sucre & de Miel, vendues aux professionnels.`,
       path: `/creations/${cat.slug}`,
       image: media(cat.image),
     })
@@ -51,8 +51,8 @@ export default async function CreationSlugPage({ params }: Props) {
     const products = await getProducts({ categoryId: cat.id })
     return (
       <>
-        <JsonLd data={breadcrumbSchema([{ name: 'Accueil', path: '/' }, { name: 'Créations', path: '/creations' }, { name: cat.name, path: `/creations/${cat.slug}` }])} />
-        <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Créations', href: '/creations' }, { name: cat.name }]} />
+        <JsonLd data={breadcrumbSchema([{ name: 'Accueil', path: '/' }, { name: 'Nos produits', path: '/creations' }, { name: cat.name, path: `/creations/${cat.slug}` }])} />
+        <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Nos produits', href: '/creations' }, { name: cat.name }]} />
         <section className="section !pt-8">
           <div className="container-x">
             <SectionHeader as="h1" title={cat.name} subtitle={cat.description ?? undefined} />
@@ -76,19 +76,19 @@ export default async function CreationSlugPage({ params }: Props) {
   return (
     <>
       <JsonLd data={productSchema(p, images)} />
-      <JsonLd data={breadcrumbSchema([{ name: 'Accueil', path: '/' }, { name: 'Créations', path: '/creations' }, ...(c ? [{ name: c.name, path: `/creations/${c.slug}` }] : []), { name: p.name, path: `/creations/${p.slug}` }])} />
-      <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Créations', href: '/creations' }, ...(c ? [{ name: c.name, href: `/creations/${c.slug}` }] : []), { name: p.name }]} />
+      <JsonLd data={breadcrumbSchema([{ name: 'Accueil', path: '/' }, { name: 'Nos produits', path: '/creations' }, ...(c ? [{ name: c.name, path: `/creations/${c.slug}` }] : []), { name: p.name, path: `/creations/${p.slug}` }])} />
+      <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Nos produits', href: '/creations' }, ...(c ? [{ name: c.name, href: `/creations/${c.slug}` }] : []), { name: p.name }]} />
 
       <article className="section !pt-8">
         <div className="container-x grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
           <div>
             <div className="card-img aspect-[4/3]">
-              <Photo media={images[0]} size="wide" sizes="(min-width: 64rem) 55vw, 92vw" priority fallbackLabel={p.name} />
+              <Photo media={images[0]} size="wide" fit="contain" sizes="(min-width: 64rem) 55vw, 92vw" priority fallbackLabel={p.name} />
             </div>
             {images.length > 1 && (
               <ul className="mt-4 grid grid-cols-3 gap-3">
                 {images.slice(1).map((m) => (
-                  <li key={m.id} className="card-img aspect-[4/3]"><Photo media={m} sizes="20vw" /></li>
+                  <li key={m.id} className="card-img aspect-[4/3]"><Photo media={m} fit="contain" sizes="20vw" /></li>
                 ))}
               </ul>
             )}
@@ -98,9 +98,9 @@ export default async function CreationSlugPage({ params }: Props) {
             {c && <p className="eyebrow mb-2"><Link href={`/creations/${c.slug}`} className="no-underline hover:underline">{c.name}</Link></p>}
             <h1 className="!text-4xl md:!text-5xl">{p.name}</h1>
             {price && <p className="mt-3 text-xl font-semibold text-cocoa">{price}</p>}
-            <p className="mt-1 text-sm text-charcoal">Prix indicatif, confirmé lors de votre demande.</p>
+            <p className="mt-1 text-sm text-charcoal">Vente réservée aux professionnels. Tarifs sur demande.</p>
 
-            <p className={`mt-4 inline-block rounded-full px-3 py-1 text-sm font-semibold ${available ? 'bg-emerald-100 text-emerald-900' : 'bg-cream-deep text-cocoa'}`}>
+            <p className={`mt-4 inline-block rounded-full px-3 py-1 text-sm font-semibold ${available ? 'bg-sage-deep text-charcoal' : 'bg-cream-deep text-cocoa'}`}>
               {available ? 'Disponible' : 'Actuellement indisponible'}
               {p.seasonal && p.availableFrom && p.availableUntil && ` · du ${dateFr(p.availableFrom)} au ${dateFr(p.availableUntil)}`}
             </p>
@@ -111,13 +111,13 @@ export default async function CreationSlugPage({ params }: Props) {
               {p.ingredients && (<div><dt className="font-semibold text-cocoa">Composition</dt><dd className="mt-1">{p.ingredients}</dd></div>)}
               {allergens.length > 0 && (<div><dt className="font-semibold text-cocoa">Allergènes</dt><dd className="mt-1">{allergens.join(', ')}</dd></div>)}
               {(p.formats?.length ?? 0) > 0 && (
-                <div><dt className="font-semibold text-cocoa">Formats</dt><dd className="mt-1">{p.formats!.map((f) => f.label).join(' · ')}</dd></div>
+                <div><dt className="font-semibold text-cocoa">Formats</dt><dd className="mt-1">{p.formats!.map((f) => f.label).join('  /  ')}</dd></div>
               )}
             </dl>
 
             <div className="mt-8">
               {available ? (
-                <Link href={`/commander?creation=${p.slug}`} className="btn btn-primary">Demander ce produit</Link>
+                <Link href={`/professionnels?tarte=${p.slug}`} className="btn btn-primary">Demander les tarifs pro</Link>
               ) : (
                 <Link href="/contact" className="btn btn-secondary">Nous écrire pour la prochaine saison</Link>
               )}
@@ -129,7 +129,7 @@ export default async function CreationSlugPage({ params }: Props) {
       {related.length > 0 && (
         <section className="section bg-cream-deep">
           <div className="container-x">
-            <h2>Dans la même catégorie</h2>
+            <h2>Dans la même gamme</h2>
             <div className="mt-10"><ProductGrid products={related} /></div>
           </div>
         </section>

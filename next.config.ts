@@ -26,9 +26,18 @@ const baseHeaders = [
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   experimental: { globalNotFound: true },
+  // Vercel : la base et les photos générées au build doivent être embarquées dans les fonctions.
+  ...(process.env.VERCEL ? { outputFileTracingIncludes: { '/**': ['./payload.db', './media/**/*'] } } : {}),
   images: {
     formats: ['image/avif', 'image/webp'],
+    qualities: [75, 85, 90],
     localPatterns: [{ pathname: '/api/media/file/**' }, { pathname: '/images/**' }],
+  },
+  async redirects() {
+    return [
+      { source: '/commander', destination: '/professionnels', permanent: true },
+      { source: '/evenements', destination: '/professionnels', permanent: true },
+    ]
   },
   async headers() {
     return [

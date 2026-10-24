@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 
-const PAGES = ['/', '/creations', '/creations/tartes', '/creations/tarte-aux-fruits-de-saison', '/maison', '/evenements', '/professionnels', '/actualites', '/commander', '/contact', '/mentions-legales', '/confidentialite', '/page-inexistante']
+const PAGES = ['/', '/creations', '/creations/tartes-alpines', '/creations/tarte-myrtille', '/maison', '/professionnels', '/actualites', '/contact', '/mentions-legales', '/confidentialite', '/page-inexistante']
 
 for (const path of PAGES) {
   test(`axe WCAG 2.1 AA — ${path}`, async ({ page }) => {

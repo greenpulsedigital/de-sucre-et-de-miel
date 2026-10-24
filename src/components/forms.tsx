@@ -2,8 +2,8 @@
 
 import { useActionState, useEffect, useId, useRef, useState, type ReactNode } from 'react'
 import type { FormState } from '@/lib/forms'
-import { EVENT_TYPES, PRO_TYPES } from '@/lib/forms'
-import { submitContact, submitEvent, submitOrder, submitPro } from '@/app/(site)/actions'
+import { PRO_TYPES } from '@/lib/forms'
+import { submitContact, submitPro } from '@/app/(site)/actions'
 
 const initial: FormState = { ok: false }
 
@@ -78,10 +78,8 @@ function Identity({ state }: { state: FormState }) {
   )
 }
 
-const today = () => new Date().toISOString().slice(0, 10)
-
 /** Coquille commune : récapitulatif d'erreurs accessible, confirmation annoncée, champ piège anti-spam. */
-function FormShell({ action, children, submitLabel, success, multipart }: { action: (s: FormState, fd: FormData) => Promise<FormState>; children: (state: FormState) => ReactNode; submitLabel: string; success: { title: string; text: string }; multipart?: boolean }) {
+function FormShell({ action, children, submitLabel, success }: { action: (s: FormState, fd: FormData) => Promise<FormState>; children: (state: FormState) => ReactNode; submitLabel: string; success: { title: string; text: string } }) {
   const [state, formAction, pending] = useActionState(action, initial)
   const summary = useRef<HTMLDivElement>(null)
   const done = useRef<HTMLDivElement>(null)
@@ -102,7 +100,7 @@ function FormShell({ action, children, submitLabel, success, multipart }: { acti
 
   const errorEntries = Object.entries(state.errors ?? {})
   return (
-    <form action={formAction} noValidate={false} encType={multipart ? 'multipart/form-data' : undefined} className="space-y-6">
+    <form action={formAction} noValidate={false} className="space-y-6">
       {state.message && (
         <div ref={summary} tabIndex={-1} role="alert" className="rounded-sm border-2 border-[#a32020] bg-white p-4 outline-none">
           <p className="font-semibold text-[#a32020]">{state.message}</p>
@@ -126,100 +124,27 @@ function FormShell({ action, children, submitLabel, success, multipart }: { acti
   )
 }
 
-export type OrderProduct = { slug: string; name: string; formats: string[] }
-
-export function OrderForm({ products, preselected }: { products: OrderProduct[]; preselected?: string }) {
-  const [slug, setSlug] = useState(products.some((p) => p.slug === preselected) ? preselected! : '')
-  const current = products.find((p) => p.slug === slug)
+export function ProForm({ interest }: { interest?: string }) {
   return (
-    <FormShell action={submitOrder} submitLabel="Envoyer ma demande" success={{ title: 'Demande envoyée', text: 'Merci ! Nous vérifions la disponibilité et revenons vers vous rapidement pour confirmer. Rien n’est facturé à ce stade.' }}>
-      {(state) => (
-        <>
-          <fieldset className="space-y-5">
-            <legend className="mb-4 font-display text-2xl text-cocoa">1. Choisir une création</legend>
-            <Field name="creation" label="Création" state={state} required>
-              {({ id, describedBy, invalid }) => (
-                <select id={id} name="creation" required className="input" value={slug} onChange={(e) => setSlug(e.target.value)} aria-invalid={invalid || undefined} aria-describedby={describedBy}>
-                  <option value="" disabled>Choisir une création…</option>
-                  {products.map((p) => <option key={p.slug} value={p.slug}>{p.name}</option>)}
-                  <option value="sur-mesure">Autre / création sur mesure</option>
-                </select>
-              )}
-            </Field>
-          </fieldset>
-
-          <fieldset className="space-y-5">
-            <legend className="mb-4 font-display text-2xl text-cocoa">2. Votre demande</legend>
-            <div className="grid gap-5 sm:grid-cols-2">
-              <Text name="quantity" label="Quantité" type="number" state={state} required min={1} max={200} inputMode="numeric" />
-              <Text name="date" label="Date souhaitée" type="date" state={state} required min={today()} hint="Retrait ou livraison" />
-            </div>
-            {current && current.formats.length > 0 ? (
-              <Field name="format" label="Format" state={state}>
-                {({ id, describedBy }) => (
-                  <select id={id} name="format" className="input" defaultValue="" aria-describedby={describedBy}>
-                    <option value="">À définir avec vous</option>
-                    {current.formats.map((f) => <option key={f} value={f}>{f}</option>)}
-                  </select>
-                )}
-              </Field>
-            ) : (
-              <Text name="format" label="Format" state={state} hint="Nombre de parts, taille… (facultatif)" />
-            )}
-            <Area name="personalization" label="Personnalisation" state={state} hint="Message, décor, régime alimentaire, allergies… (facultatif)" />
-          </fieldset>
-
-          <fieldset className="space-y-5">
-            <legend className="mb-4 font-display text-2xl text-cocoa">3. Vos coordonnées</legend>
-            <Identity state={state} />
-            <Area name="message" label="Un mot pour l’atelier" state={state} rows={3} />
-          </fieldset>
-        </>
-      )}
-    </FormShell>
-  )
-}
-
-export function EventForm() {
-  return (
-    <FormShell multipart action={submitEvent} submitLabel="Envoyer ma demande" success={{ title: 'Demande reçue', text: 'Merci ! Nous étudions votre projet et vous répondons rapidement avec une première proposition.' }}>
-      {(state) => (
-        <>
-          <Identity state={state} />
-          <div className="grid gap-5 sm:grid-cols-2">
-            <Select name="eventType" label="Type d’événement" options={EVENT_TYPES} state={state} required />
-            <Text name="date" label="Date de l’événement" type="date" state={state} required min={today()} />
-            <Text name="guests" label="Nombre de personnes" type="number" state={state} required min={1} max={1000} inputMode="numeric" />
-            <Text name="creationType" label="Type de création" state={state} hint="Gâteau, pièce montée, buffet de desserts…" />
-          </div>
-          <Text name="budget" label="Budget indicatif" state={state} hint="Facultatif — nous aide à proposer la bonne pièce" />
-          <Area name="message" label="Message" state={state} />
-          <Field name="inspiration" label="Ajouter une inspiration" state={state} hint="Facultatif — JPEG, PNG ou WebP, 5 Mo maximum">
-            {({ id, describedBy, invalid }) => (
-              <input id={id} name="inspiration" type="file" accept="image/jpeg,image/png,image/webp" className="input !py-2" aria-invalid={invalid || undefined} aria-describedby={describedBy} />
-            )}
-          </Field>
-        </>
-      )}
-    </FormShell>
-  )
-}
-
-export function ProForm() {
-  return (
-    <FormShell action={submitPro} submitLabel="Parler de mon projet" success={{ title: 'Message envoyé', text: 'Merci ! Nous revenons vers vous rapidement pour échanger sur vos besoins.' }}>
+    <FormShell action={submitPro} submitLabel="Envoyer ma demande" success={{ title: 'Demande envoyée', text: 'Merci ! Nous revenons vers vous rapidement avec nos conditions professionnelles.' }}>
       {(state) => (
         <>
           <div className="grid gap-5 sm:grid-cols-2">
             <Text name="company" label="Établissement" state={state} required autoComplete="organization" />
             <Select name="proType" label="Type de structure" options={PRO_TYPES} state={state} required />
           </div>
+          <Text name="siret" label="Numéro de SIRET" state={state} required inputMode="numeric" autoComplete="off" hint="14 chiffres. Nos produits sont réservés aux professionnels." />
           <Identity state={state} />
+          <Field name="interest" label="Tartes qui vous intéressent" state={state} hint="Ex. myrtille, noix, citron ; tailles 28, 24 ou 14 cm">
+            {({ id, describedBy, invalid, defaultValue }) => (
+              <input id={id} name="interest" type="text" className="input" defaultValue={defaultValue ?? interest} aria-invalid={invalid || undefined} aria-describedby={describedBy} />
+            )}
+          </Field>
           <div className="grid gap-5 sm:grid-cols-2">
-            <Text name="volume" label="Volumes envisagés" state={state} hint="Ex. 30 desserts par semaine" />
-            <Text name="frequency" label="Fréquence" state={state} hint="Ponctuel, hebdomadaire…" />
+            <Text name="volume" label="Volumes envisagés" state={state} hint="Ex. 20 tartes par semaine" />
+            <Text name="frequency" label="Fréquence" state={state} hint="Ponctuel, hebdomadaire, saisonnier…" />
           </div>
-          <Area name="message" label="Votre projet" state={state} required hint="Personnalisation, conditionnement, livraison ou retrait…" />
+          <Area name="message" label="Votre projet" state={state} required hint="Lieu, livraison ou retrait, questions…" />
         </>
       )}
     </FormShell>
@@ -231,6 +156,7 @@ export function ContactForm() {
     <FormShell action={submitContact} submitLabel="Envoyer" success={{ title: 'Message envoyé', text: 'Merci, nous vous répondons dès que possible.' }}>
       {(state) => (
         <>
+          <Text name="siret" label="Numéro de SIRET" state={state} required inputMode="numeric" autoComplete="off" hint="14 chiffres. Nos produits sont réservés aux professionnels." />
           <div className="grid gap-5 sm:grid-cols-2">
             <Text name="firstName" label="Prénom" state={state} required autoComplete="given-name" />
             <Text name="lastName" label="Nom" state={state} required autoComplete="family-name" />

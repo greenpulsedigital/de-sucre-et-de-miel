@@ -1,0 +1,12 @@
+node_modules
+.next
+.env
+.env.*
+*.db
+*.db-*
+media
+test-results
+playwright-report
+graphify-out
+tests
+tsconfig.tsbuildinfo

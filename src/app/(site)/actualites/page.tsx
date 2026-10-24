@@ -11,7 +11,7 @@ export const revalidate = 300
 
 export const metadata = buildMetadata({
   title: 'Actualités de l’atelier',
-  description: 'Nouvelles créations, créations de saison, événements et coulisses de l’atelier De Sucre & de Miel.',
+  description: 'Nouvelles tartes, saison, revendeurs et coulisses de l’atelier De Sucre & de Miel.',
   path: '/actualites',
 })
 
@@ -23,7 +23,7 @@ export default async function NewsPage() {
       <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Actualités' }]} />
       <section className="section !pt-8">
         <div className="container-x">
-          <SectionHeader as="h1" title="Actualités" subtitle="Nouvelles créations, saison, coulisses de l’atelier." />
+          <SectionHeader as="h1" title="Actualités" subtitle="Nouvelles tartes, saison, coulisses de l’atelier." />
           {articles.length === 0 ? (
             <p className="mt-10">Pas encore d’actualité. Revenez bientôt.</p>
           ) : (

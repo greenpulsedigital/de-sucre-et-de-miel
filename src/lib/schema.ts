@@ -15,7 +15,9 @@ export function organizationSchema(s: SiteSetting) {
     '@id': `${SITE.url}/#organization`,
     name: SITE.name,
     url: SITE.url,
-    description: 'Pâtisserie artisanale dans la Drôme : tartes, gâteaux, entremets et créations sur mesure.',
+    logo: `${SITE.url}/images/logo.webp`,
+    description: 'Tartes aux fruits et pains d’épices artisanaux, vendus uniquement aux professionnels et livrés dans toute la France.',
+    founder: { '@type': 'Person', name: 'William Frachisse' },
     telephone: s.phone || undefined,
     email: s.email || undefined,
     sameAs,
@@ -27,7 +29,8 @@ export function organizationSchema(s: SiteSetting) {
       addressRegion: 'Auvergne-Rhône-Alpes',
       addressCountry: 'FR',
     },
-    areaServed: 'Drôme',
+    areaServed: { '@type': 'Country', name: 'France' },
+    audience: { '@type': 'BusinessAudience', audienceType: 'Épiceries, primeurs, gîtes, commerces de terroir' },
   }
 }
 

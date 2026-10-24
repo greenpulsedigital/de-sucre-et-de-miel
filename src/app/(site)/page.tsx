@@ -1,83 +1,122 @@
 import Link from 'next/link'
 import { Photo } from '@/components/Photo'
-import { CTASection, CategoryCard, ImageTextSection, InstagramGrid, ProductGrid, SectionHeader, Testimonial } from '@/components/blocks'
-import { getCategories, getProducts, getSettings, getTestimonials, getArticles, media } from '@/lib/data'
+import { Hero } from '@/components/Hero'
+import { SmoothScroll } from '@/components/SmoothScroll'
+import { WordReveal } from '@/components/WordReveal'
+import { CTASection, InstagramGrid, ProductGrid, SectionHeader, Testimonial } from '@/components/blocks'
+import { getProducts, getSettings, getTestimonials, getArticles, media } from '@/lib/data'
 import { buildMetadata } from '@/lib/seo'
 import { dateFr } from '@/lib/format'
 
 export const revalidate = 300
 
 export const metadata = buildMetadata({
-  title: 'De Sucre & de Miel — Pâtisserie artisanale dans la Drôme',
-  description: 'Pâtisserie artisanale à Montboucher-sur-Jabron : tartes, gâteaux, entremets et créations sur mesure pour vos occasions. Commande sur demande.',
+  title: 'De Sucre & de Miel — Tartes alpines artisanales pour professionnels',
+  description: 'Tartes alpines artisanales fabriquées à Montboucher-sur-Jabron, vendues uniquement aux professionnels : épiceries, primeurs, gîtes. 9 recettes, 3 tailles.',
   path: '/',
 })
 
 export default async function HomePage() {
-  const [settings, categories, featured, testimonials, articles] = await Promise.all([
+  const [settings, featured, testimonials, articles] = await Promise.all([
     getSettings(),
-    getCategories(),
-    getProducts({ featured: true }),
+    getProducts(),
     getTestimonials(),
     getArticles(1),
   ])
   const hero = media(settings.heroImage)
   const latest = articles[0]
+  const sizePhoto = media((featured.find((p) => p.slug === 'tarte-abricot') ?? featured[0])?.images?.[0]?.image)
+  const quotePhoto = media(featured.find((p) => p.slug?.startsWith('pain-d-epices'))?.images?.[0]?.image)
 
   return (
     <>
-      {/* HERO : une image forte, pas de slider, pas de vidéo */}
-      <section className="on-dark relative isolate flex min-h-[min(88svh,54rem)] items-start overflow-hidden bg-cocoa">
-        <div className="absolute inset-0 -z-10">
-          <Photo media={hero} size="wide" sizes="100vw" priority className="object-[22%_80%] md:object-[50%_75%]" fallbackLabel="Une tarte artisanale sur un plan de travail en bois" />
-        </div>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-charcoal/85 via-charcoal/45 to-transparent" />
-        <div className="container-x pb-40 pt-16 md:pb-48 md:pt-24">
-          <div className="max-w-xl">
-            <p className="eyebrow" style={{ color: 'var(--color-honey-light)' }}>Montboucher-sur-Jabron · Drôme</p>
-            <h1 className="mt-3" style={{ color: '#fff' }}>De Sucre &amp; de Miel</h1>
-            <p className="mt-2 font-display text-2xl text-cream md:text-3xl">Pâtisserie artisanale dans la Drôme</p>
-            <p className="mt-5 max-w-md text-lg text-cream/95">Des créations gourmandes imaginées et réalisées avec passion.</p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/creations" className="btn btn-secondary">Découvrir les créations</Link>
-              <Link href="/commander" className="btn btn-primary">Commander</Link>
-            </div>
-          </div>
+      <SmoothScroll />
+
+      {/* HERO : titre fort + photo d'ambiance en arche, pas de slider ni de vidéo */}
+      <Hero
+        eyebrow="Vente uniquement aux professionnels"
+        title="Des tartes alpines pour votre comptoir."
+        lead="Neuf recettes en trois tailles, plus des pains d’épices. Fabriquées à la main par William Frachisse, livrées dans toute la France."
+        ctas={
+          <>
+            <Link href="/professionnels" className="btn btn-primary">Demander les tarifs pro</Link>
+            <Link href="/creations" className="btn btn-secondary">Voir la gamme</Link>
+          </>
+        }
+        photo={<Photo media={hero} size="original" quality={85} sizes="(min-width: 48rem) 74rem, 46rem" priority className="object-[60%_50%]" fallbackLabel="Une tarte alpine artisanale face aux sommets" />}
+      />
+
+      {/* BANDEAU */}
+      <section aria-label="En bref" className="bg-honey font-display text-lg font-bold text-charcoal md:text-xl">
+        <div className="container-x flex flex-wrap justify-between gap-x-8 gap-y-1 py-4 md:py-5">
+          <span>9 tartes</span><span>3 tailles</span><span>3 pains d’épices</span><span>Livraison partout en France</span><span>B2B uniquement</span>
         </div>
       </section>
 
-      {/* CRÉATIONS SIGNATURE */}
+      {/* GAMME */}
+      <section id="gamme" className="section">
+        <div className="container-x">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end md:gap-12">
+            <WordReveal text="La gamme, en un coup d’œil." className="max-w-3xl" />
+            <p className="max-w-md text-lg">Myrtille, abricot, framboise, fraise, citron, chocolat, praline, mendiant et noix, chacune en 28, 24 et 14 cm. Et trois pains d’épices.</p>
+          </div>
+          <div className="mt-10 md:mt-14"><ProductGrid products={featured} /></div>
+          <p className="mt-10"><Link href="/creations" className="btn btn-secondary">Voir tous les produits</Link></p>
+        </div>
+      </section>
+
+      {/* TAILLES */}
+      <section className="section bg-cream-deep">
+        <div className="container-x grid items-center gap-10 md:grid-cols-2 md:gap-16">
+          <div>
+            <WordReveal text="Trois tailles pour chaque comptoir." />
+            <p className="mt-5 max-w-lg text-lg">La grande pour la vitrine et la découpe, la moyenne pour le rayon, la petite pour la vente à l’unité. Le même goût, à l’échelle de votre clientèle.</p>
+          </div>
+          <ul className="flex items-end justify-between gap-3 md:gap-6">
+            {[{ cm: 28, g: 550 }, { cm: 24, g: 400 }, { cm: 14, g: 100 }].map((f) => (
+              <li key={f.cm} className="flex flex-col items-center gap-3 text-center" style={{ flex: `${f.cm} 1 0` }}>
+                <div className="aspect-square w-full"><Photo media={sizePhoto} size="card" fit="contain" className="!p-0" sizes="(min-width: 48rem) 15rem, 30vw" fallbackLabel={`Tarte ${f.cm} cm`} /></div>
+                <p className="font-display text-lg font-bold leading-tight text-charcoal md:text-2xl">{f.cm} cm<br /><span className="font-sans text-sm font-medium md:text-base">{f.g} g</span></p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* REVENDEURS */}
       <section className="section">
         <div className="container-x">
-          <SectionHeader title="Les créations" subtitle="Des pâtisseries imaginées au fil des saisons et réalisées à l’atelier." />
-          {categories.length > 0 && (
-            <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-5">
-              {categories.map((c) => (
-                <li key={c.id}><CategoryCard category={c} /></li>
-              ))}
-            </ul>
-          )}
-          <div className="mt-14">
-            <ProductGrid products={featured.slice(0, 6)} />
-          </div>
-          <p className="mt-12"><Link href="/creations" className="btn btn-secondary">Voir toutes les créations</Link></p>
+          <WordReveal text="Pour ceux qui vendent, hébergent, régalent." className="max-w-3xl" />
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            {[
+              { n: '01', t: 'Épiceries', d: 'Une gamme régionale prête à mettre en rayon, en 14, 24 ou 28 cm.' },
+              { n: '02', t: 'Primeurs', d: 'Le complément naturel d’un étal de fruits : myrtille, abricot, fraise.' },
+              { n: '03', t: 'Gîtes', d: 'Pour le petit déjeuner, la table d’hôtes ou la vente à vos hôtes.' },
+              { n: '04', t: 'Commerces de terroir', d: 'Boutiques de producteurs, fermes, comptoirs de montagne.' },
+            ].map((c) => (
+              <li key={c.n} className="reveal flex min-h-64 flex-col justify-between rounded-3xl border-2 border-charcoal bg-white p-7">
+                <span className="font-display text-5xl font-extrabold text-coral" aria-hidden="true">{c.n}</span>
+                <div><h3 className="!text-2xl">{c.t}</h3><p className="mt-2">{c.d}</p></div>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* SAVOIR-FAIRE */}
-      <ImageTextSection
-        image={media(settings.workshopImage)}
-        imageAlt="L’atelier de pâtisserie"
-        eyebrow="Notre savoir-faire"
-        title="Derrière chaque création, il y a du temps, des gestes et des produits soigneusement choisis."
-      >
-        <ul className="list-disc space-y-1 pl-5">
-          <li>Fabrication artisanale, à l’atelier</li>
-          <li>Produits de saison</li>
-          <li>Petites séries</li>
-        </ul>
-        <p className="!mt-6"><Link href="/maison" className="btn btn-secondary">Découvrir la maison</Link></p>
-      </ImageTextSection>
+      {/* CITATION */}
+      <section className="on-dark section bg-charcoal text-cream">
+        <div className="container-x grid items-center gap-10 md:grid-cols-[1fr_1.2fr] md:gap-20">
+          <div className="aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#2a221b] md:aspect-auto md:h-[26rem]">
+            <Photo media={quotePhoto ?? media(settings.workshopImage)} size="wide" sizes="(min-width: 48rem) 40vw, 92vw" fallbackLabel="Pain d’épices artisanal" />
+          </div>
+          <div>
+            <p className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl">« Un clin d’œil à mon enfance. »</p>
+            <p className="mt-6 max-w-xl text-lg text-cream/90 md:text-xl">Pâtissier-boulanger natif des Hautes-Alpes, William Frachisse fabrique chaque tarte et chaque pain d’épices dans le respect des traditions, en gardant la curiosité de nouvelles saveurs.</p>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.12em] text-honey">William Frachisse · Fondateur</p>
+            <p className="mt-6"><Link href="/maison" className="btn btn-secondary">Découvrir la maison</Link></p>
+          </div>
+        </div>
+      </section>
 
       {/* SAISON / ACTUALITÉ */}
       {latest && (
@@ -94,21 +133,6 @@ export default async function HomePage() {
           </div>
         </section>
       )}
-
-      {/* CRÉATIONS SUR MESURE */}
-      <ImageTextSection
-        reverse
-        image={media(categories.find((c) => c.slug === 'creations-sur-mesure')?.image)}
-        imageAlt="Création sur mesure"
-        eyebrow="Créations sur mesure"
-        title="Un anniversaire, un mariage, une réception : une création unique."
-      >
-        <p>Racontez-nous l’occasion, le nombre de personnes, vos envies. Nous imaginons la pièce avec vous et confirmons sa faisabilité.</p>
-        <p className="!mt-6 flex flex-wrap gap-3">
-          <Link href="/evenements" className="btn btn-secondary">Événements</Link>
-          <Link href="/professionnels" className="btn btn-secondary">Professionnels</Link>
-        </p>
-      </ImageTextSection>
 
       {/* AVIS : uniquement de vrais avis */}
       {testimonials.length > 0 && (

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import type { Category, Media, Product, Testimonial, SiteSetting } from '@/payload-types'
@@ -30,21 +31,32 @@ export function Breadcrumb({ items }: { items: { name: string; href?: string }[]
   )
 }
 
+/** Fond de tuile par recette (repris du logo : tons doux, texte charbon > 12:1). */
+const TILE_BG: Record<string, string> = {
+  'tarte-myrtille': '#d9d3e6', 'tarte-abricot': '#f6d9b4', 'tarte-framboise': '#ebcfd3', 'tarte-fraise': '#f5cfc8',
+  'tarte-citron': '#f7ebb0', 'tarte-chocolat': '#e4d3c6', 'tarte-praline': '#f2cbd6', 'tarte-mendiant': '#e9dec8', 'tarte-noix': '#eadcc0',
+}
+export const tileBg = (slug?: string | null) => (slug && TILE_BG[slug]) || '#e5dccb'
+
+/** « 28 · 24 · 14 cm » pour les tartes, « 350 g » pour un pain d'épices. */
+export function sizesText(p: Pick<Product, 'formats'>) {
+  const labels = (p.formats ?? []).map((f) => f.label)
+  const cm = labels.map((l) => l.match(/^(\d+) cm/)?.[1])
+  return cm.length > 0 && cm.every(Boolean) ? `${cm.join(' · ')} cm` : labels.join(' · ')
+}
+
 export function ProductCard({ product, priority }: { product: Product; priority?: boolean }) {
-  const cat = category(product.category)
   const img = media(product.images?.[0]?.image)
   const price = priceText(product)
   return (
-    <article className="card-link reveal">
-      <Link href={`/creations/${product.slug}`} className="block no-underline">
-        <div className="card-img aspect-[4/3]">
-          <Photo media={img} size="card" sizes="(min-width: 64rem) 24rem, (min-width: 40rem) 45vw, 92vw" priority={priority} fallbackLabel={product.name} />
+    <article className="reveal h-full">
+      <Link href={`/creations/${product.slug}`} className="flex h-full flex-col overflow-hidden rounded-[1.75rem] no-underline transition-transform duration-200 hover:-translate-y-1" style={{ background: tileBg(product.slug) }}>
+        <div className="aspect-[6/5]">
+          <Photo media={img} size="card" fit={product.slug?.startsWith('pain-d-epices') ? 'cover' : 'contain'} sizes="(min-width: 64rem) 24rem, (min-width: 40rem) 45vw, 46vw" priority={priority} fallbackLabel={product.name} />
         </div>
-        <div className="mt-4">
-          {cat && <p className="eyebrow">{cat.name}</p>}
-          <h3 className="mt-1 text-cocoa">{product.name}</h3>
-          <p className="mt-1 text-charcoal/85">{product.excerpt}</p>
-          {price && <p className="mt-2 font-semibold text-cocoa">{price}</p>}
+        <div className="mt-auto px-4 pb-5 pt-4 md:px-8 md:pb-8">
+          <h3 className="!text-lg text-charcoal md:!text-3xl">{product.name}</h3>
+          <p className="mt-1 text-sm font-medium text-charcoal md:text-base">{[sizesText(product), price].filter(Boolean).join(' · ')}</p>
         </div>
       </Link>
     </article>
@@ -52,9 +64,9 @@ export function ProductCard({ product, priority }: { product: Product; priority?
 }
 
 export function ProductGrid({ products }: { products: Product[] }) {
-  if (!products.length) return <p className="text-charcoal">Les créations arrivent bientôt. En attendant, écrivez-nous pour une demande sur mesure.</p>
+  if (!products.length) return <p className="text-charcoal">Les tartes arrivent bientôt. Écrivez-nous pour connaître la gamme.</p>
   return (
-    <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid grid-cols-2 gap-3 md:gap-6 lg:grid-cols-3">
       {products.map((p) => (
         <li key={p.id}>
           <ProductCard product={p} />
@@ -74,13 +86,21 @@ export function CategoryCard({ category: c }: { category: Category }) {
   )
 }
 
-export function ImageTextSection({ image, imageAlt, eyebrow, title, children, reverse, dark }: { image: Media | null; imageAlt?: string; eyebrow?: string; title: ReactNode; children: ReactNode; reverse?: boolean; dark?: boolean }) {
+export function ImageTextSection({ slot, image, staticImage, imagePosition = '50% 50%', imageAlt, eyebrow, title, children, reverse, dark }: { slot?: ReactNode; image: Media | null; staticImage?: string; imagePosition?: string; imageAlt?: string; eyebrow?: string; title: ReactNode; children: ReactNode; reverse?: boolean; dark?: boolean }) {
   return (
     <section className={`section ${dark ? 'on-dark bg-cocoa text-cream' : ''}`}>
       <div className="container-x grid items-center gap-10 md:grid-cols-2 md:gap-16">
+        {slot ? (
+          <div className={`reveal ${reverse ? 'md:order-2' : ''}`}>{slot}</div>
+        ) : (
         <div className={`reveal aspect-[4/5] overflow-hidden rounded-sm md:aspect-[5/6] ${reverse ? 'md:order-2' : ''}`}>
-          <Photo media={image} size="wide" sizes="(min-width: 48rem) 45vw, 92vw" fallbackLabel={imageAlt} />
+          {staticImage ? (
+            <Image src={staticImage} alt={imageAlt ?? ''} width={1463} height={1462} sizes="(min-width: 48rem) 45vw, 92vw" className="h-full w-full object-cover" style={{ objectPosition: imagePosition }} />
+          ) : (
+            <Photo media={image} size="wide" sizes="(min-width: 48rem) 45vw, 92vw" fallbackLabel={imageAlt} />
+          )}
         </div>
+        )}
         <div className="reveal">
           {eyebrow && <p className="eyebrow mb-3" style={dark ? { color: 'var(--color-honey-light)' } : undefined}>{eyebrow}</p>}
           <h2 style={dark ? { color: '#fff' } : undefined}>{title}</h2>
@@ -91,15 +111,17 @@ export function ImageTextSection({ image, imageAlt, eyebrow, title, children, re
   )
 }
 
-export function CTASection({ title = 'Une envie, une occasion ?', text = 'Dites-nous ce que vous imaginez. Nous vérifions la disponibilité et revenons vers vous.', primary = { href: '/commander', label: 'Commander' }, secondary }: { title?: string; text?: string; primary?: { href: string; label: string }; secondary?: { href: string; label: string } }) {
+export function CTASection({ title = 'Parlons de votre rayon.', text = 'Épicerie, primeur, gîte, commerce de terroir : indiquez votre activité, vos volumes et votre lieu. Nous revenons vers vous avec nos tarifs, minimums et modalités de livraison.', primary = { href: '/professionnels', label: 'Demander les tarifs pro' }, secondary }: { title?: string; text?: string; primary?: { href: string; label: string }; secondary?: { href: string; label: string } }) {
   return (
-    <section className="on-dark bg-cocoa">
-      <div className="container-x section text-center">
-        <h2 className="mx-auto max-w-2xl" style={{ color: '#fff' }}>{title}</h2>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-cream/90">{text}</p>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Link href={primary.href} className="btn btn-primary">{primary.label}</Link>
-          {secondary && <Link href={secondary.href} className="btn btn-secondary">{secondary.label}</Link>}
+    <section className="bg-honey text-charcoal">
+      <div className="container-x section grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
+        <h2>{title}</h2>
+        <div>
+          <p className="text-lg md:text-xl">{text}</p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link href={primary.href} className="btn btn-dark">{primary.label}</Link>
+            {secondary && <Link href={secondary.href} className="btn btn-secondary">{secondary.label}</Link>}
+          </div>
         </div>
       </div>
     </section>
@@ -143,15 +165,5 @@ export function InstagramGrid({ settings }: { settings: SiteSetting }) {
         )}
       </div>
     </section>
-  )
-}
-
-export function ContactActions({ s }: { s: SiteSetting }) {
-  return (
-    <div className="flex flex-wrap gap-3">
-      {s.phone && <a className="btn btn-primary" href={telHref(s.phone)}>Appeler</a>}
-      {s.email && <a className="btn btn-secondary" href={`mailto:${s.email}`}>Écrire un email</a>}
-      {s.mapsUrl && <a className="btn btn-secondary" href={s.mapsUrl} rel="noopener noreferrer">Itinéraire</a>}
-    </div>
   )
 }
