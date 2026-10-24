@@ -44,7 +44,7 @@ export default async function HomePage() {
           </>
         }
         caption="Image d’illustration"
-        photo={<Photo media={hero} size="wide" quality={85} sizes="(min-width: 48rem) 35rem, 22rem" priority className="object-[60%_50%]" fallbackLabel="Une tarte alpine artisanale face aux sommets" />}
+        photo={<Photo media={hero} size="wide" quality={85} sizes="(min-width: 48rem) 35rem, 22rem" priority className="object-[50%_62%]" fallbackLabel="Une tarte alpine artisanale face aux sommets" />}
       />
 
       {/* BANDEAU */}
