@@ -37,6 +37,7 @@ const nextConfig: NextConfig = {
     return [
       { source: '/commander', destination: '/professionnels', permanent: true },
       { source: '/evenements', destination: '/professionnels', permanent: true },
+      { source: '/actualites/:path*', destination: '/', permanent: true },
     ]
   },
   async headers() {

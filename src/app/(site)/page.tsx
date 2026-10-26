@@ -4,9 +4,8 @@ import { Hero } from '@/components/Hero'
 import { SmoothScroll } from '@/components/SmoothScroll'
 import { WordReveal } from '@/components/WordReveal'
 import { CTASection, InstagramGrid, ProductGrid, SectionHeader, Testimonial } from '@/components/blocks'
-import { getProducts, getSettings, getTestimonials, getArticles, media } from '@/lib/data'
+import { getProducts, getSettings, getTestimonials, media } from '@/lib/data'
 import { buildMetadata } from '@/lib/seo'
-import { dateFr } from '@/lib/format'
 
 export const revalidate = 300
 
@@ -17,14 +16,12 @@ export const metadata = buildMetadata({
 })
 
 export default async function HomePage() {
-  const [settings, featured, testimonials, articles] = await Promise.all([
+  const [settings, featured, testimonials] = await Promise.all([
     getSettings(),
     getProducts(),
     getTestimonials(),
-    getArticles(1),
   ])
   const hero = media(settings.heroImage)
-  const latest = articles[0]
   const sizePhoto = media((featured.find((p) => p.slug === 'tarte-abricot') ?? featured[0])?.images?.[0]?.image)
   const quotePhoto = media(featured.find((p) => p.slug?.startsWith('pain-d-epices'))?.images?.[0]?.image)
 
@@ -118,22 +115,6 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* SAISON / ACTUALITÉ */}
-      {latest && (
-        <section className="section bg-cream-deep">
-          <div className="container-x grid items-center gap-10 md:grid-cols-[1.1fr_1fr]">
-            <div>
-              <p className="eyebrow mb-3">À la une</p>
-              <h2>{latest.title}</h2>
-              <p className="mt-3 text-sm text-charcoal/80">{dateFr(latest.publishedAt)}</p>
-              <p className="mt-4 text-lg">{latest.excerpt}</p>
-              <p className="mt-6"><Link href={`/actualites/${latest.slug}`} className="btn btn-secondary">Lire l’article</Link></p>
-            </div>
-            <div className="card-img aspect-[4/3]"><Photo media={media(latest.coverImage)} sizes="(min-width: 48rem) 40vw, 92vw" fallbackLabel={latest.title} /></div>
-          </div>
-        </section>
-      )}
 
       {/* AVIS : uniquement de vrais avis */}
       {testimonials.length > 0 && (

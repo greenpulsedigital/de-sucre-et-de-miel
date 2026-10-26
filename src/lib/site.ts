@@ -11,5 +11,4 @@ export const NAV = [
   { href: '/creations', label: 'Nos produits' },
   { href: '/maison', label: 'La maison' },
   { href: '/professionnels', label: 'Devenir revendeur' },
-  { href: '/actualites', label: 'Actualités' },
 ] as const

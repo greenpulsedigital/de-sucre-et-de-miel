@@ -140,7 +140,7 @@ async function main() {
       postalCode: '26740',
       pickupInfo: 'Vente réservée aux professionnels. Livraison dans toute la France.',
       heroImage: fs.existsSync('scripts/hero.webp')
-        ? (await payload.create({ collection: 'media', data: { alt: 'Tarte aux fruits rouges en croisillons posée sur un linge, à côté d’un pot de confiture, face aux sommets alpins au lever du soleil' }, filePath: 'scripts/hero.webp' })).id
+        ? (await payload.create({ collection: 'media', data: { alt: 'Illustration : tarte aux fruits rouges en croisillons sur une planche de bois, posée sur un rocher en montagne, avec une coupelle de baies au lever du soleil' }, filePath: 'scripts/hero.webp' })).id
         : await makeMedia('Photo provisoire — accueil'),
       workshopImage: await makeMedia('Photo provisoire — atelier'),
     },
