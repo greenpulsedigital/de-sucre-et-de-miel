@@ -1,4 +1,5 @@
-/** Crée le compte admin au premier démarrage depuis ADMIN_EMAIL / ADMIN_PASSWORD (secrets d'hébergement). */
+/** Crée le compte admin au premier démarrage depuis ADMIN_EMAIL / ADMIN_PASSWORD (secrets d'hébergement ou .env). */
+import 'dotenv/config'
 import { getPayload } from 'payload'
 import config from '../src/payload.config'
 

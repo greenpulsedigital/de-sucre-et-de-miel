@@ -16,7 +16,11 @@ pnpm build && pnpm test:e2e # tests Playwright + axe (WCAG 2.1 AA)
 - Rédiger « Notre histoire » (`src/app/(site)/maison/page.tsx`).
 - Configurer SMTP (`.env`) ; sans SMTP, les demandes restent visibles dans admin > Demandes.
 - Ajouter de vrais avis (aucun avis fictif n'est affiché) et la sélection Instagram.
-- Persistance : `payload.db` et `media/` doivent être sur un volume sauvegardé.
+- Persistance : `payload.db` et `media/` doivent être sur un volume sauvegardé (`DATABASE_URL`, `MEDIA_DIR`).
+
+## Déploiement en production (Infomaniak)
+Site Node.js sur l'Hébergement Web Infomaniak, base et photos hors du dossier de code (`DATABASE_URL`, `MEDIA_DIR`), schéma géré par les migrations (`src/migrations/`).
+Procédure complète : [docs/deploiement-infomaniak.md](docs/deploiement-infomaniak.md).
 
 ## Déploiement (Fly.io, démo `noindex`)
 ```bash

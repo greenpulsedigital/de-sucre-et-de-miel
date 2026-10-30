@@ -13,6 +13,8 @@
     "generate:types": "payload generate:types",
     "seed": "tsx scripts/seed.ts",
     "mail:check": "tsx scripts/check-mail.ts",
+    "init:prod": "tsx scripts/init-prod.ts",
+    "package:infomaniak": "git archive --format=zip -o \"$HOME/Desktop/desucreetdemiel-site.zip\" HEAD -- . ':!graphify-out' ':!tests' ':!docs' ':!fly.toml' ':!vercel.json' ':!.vercelignore' ':!Dockerfile' ':!docker-entrypoint.sh' && echo \"Archive : $HOME/Desktop/desucreetdemiel-site.zip\"",
     "test:e2e": "playwright test"
   },
   "engines": {
