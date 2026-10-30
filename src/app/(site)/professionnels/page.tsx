@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Breadcrumb, SectionHeader } from '@/components/blocks'
 import { ProForm } from '@/components/forms'
 import { JsonLd } from '@/components/JsonLd'
@@ -6,8 +7,9 @@ import { breadcrumbSchema } from '@/lib/schema'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata = buildMetadata({
-  title: 'Devenir revendeur — tartes alpines pour épiceries, primeurs, gîtes',
-  description: 'Vente en B2B uniquement : tartes aux fruits et pains d’épices artisanaux pour épiceries, primeurs, gîtes et commerces de terroir. Trois tailles, neuf recettes. Demandez nos conditions.',
+  title: 'Fournisseur de tartes artisanales pour professionnels',
+  absoluteTitle: true,
+  description: 'Épiceries fines, primeurs, gîtes : devenez revendeur de nos tartes alpines et pains d’épices artisanaux. Livraison dans toute la France, tarifs pro sur demande.',
   path: '/professionnels',
 })
 
@@ -35,7 +37,7 @@ export default async function ProsPage({ searchParams }: { searchParams: Promise
       <Breadcrumb items={[{ name: 'Accueil', href: '/' }, { name: 'Devenir revendeur' }]} />
       <section className="section !pt-8">
         <div className="container-x">
-          <SectionHeader as="h1" title="Nos tartes alpines, pour votre commerce." subtitle="Nous vendons uniquement aux professionnels et livrons dans toute la France. Dites-nous qui vous êtes et ce dont vous avez besoin : nous revenons vers vous avec nos tarifs, minimums et modalités de livraison." />
+          <SectionHeader as="h1" title="Devenez revendeur de nos tartes alpines artisanales" subtitle="Nous vendons uniquement aux professionnels et livrons dans toute la France. Dites-nous qui vous êtes et ce dont vous avez besoin : nous revenons vers vous avec nos tarifs, minimums et modalités de livraison." />
           <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {SEGMENTS.map((s) => (
               <li key={s.t} className="reveal rounded-sm bg-white p-6"><h2 className="!text-xl">{s.t}</h2><p className="mt-2">{s.d}</p></li>
@@ -47,6 +49,7 @@ export default async function ProsPage({ searchParams }: { searchParams: Promise
               <li key={f.size} className="rounded-sm border border-cocoa/15 bg-white px-6 py-4"><span className="font-display text-2xl text-cocoa">{f.size}</span><span className="ml-3 text-charcoal">{f.weight}</span></li>
             ))}
           </ul>
+          <p className="mt-10 max-w-3xl text-lg">Découvrez la gamme en détail : nos <Link href="/creations/tartes-alpines" className="underline">tartes alpines artisanales</Link>, en trois tailles, et nos <Link href="/creations/pains-d-epices" className="underline">pains d’épices</Link> nature, orange et figue. Une question avant de faire votre demande ? <Link href="/contact" className="underline">Contactez l’atelier</Link>.</p>
         </div>
       </section>
       <section className="section bg-cream-deep">

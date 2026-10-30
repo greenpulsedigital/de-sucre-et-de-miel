@@ -6,14 +6,14 @@ import { Footer } from '@/components/Footer'
 import { JsonLd } from '@/components/JsonLd'
 import { getSettings } from '@/lib/data'
 import { organizationSchema, websiteSchema } from '@/lib/schema'
-import { SITE } from '@/lib/site'
+import { NOINDEX, SITE } from '@/lib/site'
 
 const display = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-face-display', display: 'swap' })
 const sans = Instrument_Sans({ subsets: ['latin'], variable: '--font-face-sans', display: 'swap' })
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  ...(process.env.SITE_NOINDEX ? { robots: { index: false, follow: false } } : {}),
+  ...(NOINDEX ? { robots: { index: false, follow: false } } : {}),
   title: { default: `${SITE.name} — ${SITE.tagline}`, template: `%s | ${SITE.name}` },
   description: 'Tartes alpines artisanales, vendues uniquement aux professionnels (épiceries, primeurs, gîtes…). Atelier à Montboucher-sur-Jabron (Drôme).',
 }

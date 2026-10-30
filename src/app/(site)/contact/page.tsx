@@ -10,8 +10,8 @@ import { WHATSAPP_URL } from '@/lib/site'
 export const revalidate = 300
 
 export const metadata = buildMetadata({
-  title: 'Contact — tartes alpines pour professionnels',
-  description: 'Contactez l’atelier De Sucre & de Miel, à Montboucher-sur-Jabron (Drôme) : tartes alpines pour épiceries, primeurs, gîtes et commerces.',
+  title: 'Contacter l’atelier dans la Drôme',
+  description: 'Une question sur nos tartes alpines, nos pains d’épices ou la livraison ? Écrivez à l’atelier de Montboucher-sur-Jabron ou appelez-nous. Réservé aux pros.',
   path: '/contact',
 })
 
@@ -24,7 +24,7 @@ export default async function ContactPage() {
       <section className="section !pt-8">
         <div className="container-x grid gap-14 lg:grid-cols-2">
           <div>
-            <SectionHeader as="h1" title="Contact" />
+            <SectionHeader as="h1" title="Contacter l’atelier" />
             <address className="mt-8 space-y-1 not-italic text-lg">
               {s.address && <p>{s.address}</p>}
               <p>{[s.postalCode, s.city].filter(Boolean).join(' ')}</p>

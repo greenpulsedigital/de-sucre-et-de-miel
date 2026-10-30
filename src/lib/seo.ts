@@ -2,8 +2,16 @@ import type { Metadata } from 'next'
 import type { Media } from '@/payload-types'
 import { SITE } from './site'
 
+/** Image de partage par défaut (1200 × 630) quand la page n'a pas de photo propre. */
+const DEFAULT_OG = { url: '/images/og-default.jpg', width: 1200, height: 630, alt: `${SITE.name}, tartes alpines et pains d’épices artisanaux` }
+
+/**
+ * Métadonnées d'une page. `title` reçoit le suffixe « | De Sucre & de Miel » du gabarit ;
+ * `absoluteTitle: true` l'utilise tel quel (titres qui contiennent déjà la marque ou sont déjà longs).
+ */
 export function buildMetadata(opts: {
   title: string
+  absoluteTitle?: boolean
   description: string
   path: string
   image?: Media | null
@@ -11,10 +19,12 @@ export function buildMetadata(opts: {
   noindex?: boolean
 }): Metadata {
   const url = `${SITE.url}${opts.path}`
-  const img = opts.image?.sizes?.wide?.url || opts.image?.url
-  const images = img ? [{ url: img, alt: opts.image?.alt || opts.title }] : undefined
+  // Les aplats provisoires du seed ne servent jamais d'image de partage.
+  const photo = opts.image?.alt?.startsWith('Photo provisoire') ? null : opts.image
+  const img = photo?.sizes?.wide?.url || photo?.url
+  const images = img ? [{ url: img, alt: photo?.alt || opts.title }] : [DEFAULT_OG]
   return {
-    title: opts.title,
+    title: opts.absoluteTitle ? { absolute: opts.title } : opts.title,
     description: opts.description,
     alternates: { canonical: url },
     robots: opts.noindex ? { index: false, follow: false } : undefined,
@@ -27,6 +37,6 @@ export function buildMetadata(opts: {
       type: opts.type ?? 'website',
       images,
     },
-    twitter: { card: images ? 'summary_large_image' : 'summary', title: opts.title, description: opts.description, images: images?.map((i) => i.url) },
+    twitter: { card: 'summary_large_image', title: opts.title, description: opts.description, images: images.map((i) => i.url) },
   }
 }
