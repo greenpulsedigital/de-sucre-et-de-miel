@@ -1,12 +1,12 @@
-# Déploiement chez Infomaniak (Hébergement Web, site Node.js, transfert par Web FTP)
+# Déploiement chez Infomaniak (Hébergement Web, site Node.js, code depuis GitHub)
 
-Le site tourne comme un **site Node.js** de l'Hébergement Web Infomaniak : un serveur Next.js + Payload toujours actif, une base SQLite et des photos sur le disque de l'hébergement. **Aucun terminal n'est nécessaire** : tout se fait dans le Manager et le Web FTP.
+Le site tourne comme un **site Node.js** de l'Hébergement Web Infomaniak : un serveur Next.js + Payload toujours actif, une base SQLite et des photos sur le disque de l'hébergement. **Aucun terminal n'est nécessaire** : le code vient du dépôt GitHub privé `greenpulsedigital/de-sucre-et-de-miel` (branche `main`), le reste se fait dans le Manager et le Web FTP.
 
 ## Principe
 
 | Élément | Où | Persistant ? |
 |---|---|---|
-| Code | dossier du site, envoyé en ZIP par le Web FTP | remplacé à chaque déploiement |
+| Code | dossier du site, cloné depuis GitHub (`main`) | mis à jour par `git pull` à chaque build |
 | Base `payload.db` | `../data/payload.db`, **à côté** du dossier du site | oui |
 | Photos et pièces jointes | `../data/media/` | oui |
 | Secrets | fichier `.env` dans le dossier du site, créé dans le Web FTP | oui (jamais dans Git ni dans le ZIP) |
@@ -18,22 +18,31 @@ Le site tourne comme un **site Node.js** de l'Hébergement Web Infomaniak : un s
 
 ---
 
-## 1. Préparer l'archive (sur le Mac)
+## 1. Jeton d'accès GitHub (lecture seule)
 
-Commiter les changements, puis :
+Le dépôt est privé : Infomaniak a besoin d'un jeton pour le cloner.
 
-```bash
-pnpm package:infomaniak
+1. GitHub → Settings → Developer settings → **Fine-grained tokens** → Generate new token.
+2. Resource owner : `greenpulsedigital` ; Repository access : **Only select repositories** → `de-sucre-et-de-miel`.
+3. Permissions : **Contents : Read-only** (rien d'autre). Expiration : 1 an (noter la date de renouvellement).
+4. Copier le jeton : il ne sera plus affiché.
+
+URL à donner à Infomaniak (le jeton tient lieu de mot de passe) :
+
+```
+https://x-access-token:<JETON>@github.com/greenpulsedigital/de-sucre-et-de-miel.git
 ```
 
-L'archive `desucreetdemiel-site.zip` est créée sur le **Bureau**. Elle contient le code commité uniquement : ni `node_modules`, ni `.env`, ni base, ni photos envoyées, ni tests.
+Ne jamais coller cette URL ailleurs que dans le Manager : elle donne accès au code.
+
+> Sans Git, une archive reste possible : `pnpm package:infomaniak` crée `desucreetdemiel-site.zip` sur le Bureau.
 
 ## 2. Créer le site dans le Manager
 
 1. Hébergement Web → **Ajouter** → projet avec technologies avancées → **Node.js**.
 2. Version de Node.js : **22 (LTS)**.
 3. Domaine : `desucreetdemiel.fr` ; ajouter aussi `www.desucreetdemiel.fr` (le site redirige `www` vers le domaine sans `www`).
-4. Méthode **Personnalisée**, source : **archive ZIP** → envoyer `desucreetdemiel-site.zip`.
+4. Méthode **Personnalisée**, source : **dépôt Git privé** → l'URL avec jeton de l'étape 1, branche `main`.
 5. Activer le **certificat SSL** (Let's Encrypt) sur les deux domaines.
 
 ## 3. Créer le dossier des données (Web FTP)
@@ -81,7 +90,7 @@ Manager → site → **Gérer les paramètres avancés** → onglet **Node.js** 
 | Champ | Valeur |
 |---|---|
 | Dossier d'exécution | `./` (dossier qui contient `package.json`) |
-| Commande de build | `NODE_ENV=development npx --yes pnpm@11.23.0 install --frozen-lockfile && npx --yes pnpm@11.23.0 init:prod && npx --yes pnpm@11.23.0 build` |
+| Commande de build | `git pull && NODE_ENV=development npx --yes pnpm@11.23.0 install --frozen-lockfile && npx --yes pnpm@11.23.0 init:prod && npx --yes pnpm@11.23.0 build` |
 | Commande de lancement | `npm start` |
 | Port d'écoute | celui proposé par le Manager (Next.js lit la variable `PORT`) |
 
@@ -96,9 +105,10 @@ Manager → site → **Gérer les paramètres avancés** → onglet **Node.js** 
 
 ## 7. Mettre à jour le site
 
-1. Commiter, puis `pnpm package:infomaniak` sur le Mac.
-2. Web FTP : dans le dossier du site, remplacer le code par le contenu du nouveau ZIP (**sans toucher à `.env`** ni au dossier `data` à côté).
-3. Manager : relancer le **build**, puis **redémarrer**.
+1. Fusionner les changements dans `main` sur GitHub.
+2. Manager : relancer le **build** (il commence par `git pull`), puis **redémarrer**.
+
+`.env` et le dossier `data` ne sont jamais touchés (ils ne sont pas dans Git).
 
 La base et les photos ne bougent pas. Les migrations éventuelles s'appliquent toutes seules. La console doit afficher `Base existante (… produits) : aucune donnée modifiée`.
 
@@ -124,4 +134,5 @@ Commiter le fichier généré dans `src/migrations/` : il sera appliqué au proc
 - **« no such table »** : `DB_MIGRATIONS=1` absent du `.env`.
 - **Photos absentes** : vérifier `MEDIA_DIR=../data/media` et que le dossier existe.
 - **Liens en `localhost`** : `NEXT_PUBLIC_SITE_URL` doit être présent dans `.env` **avant** le build.
+- **`git pull` refusé (authentication failed)** : jeton expiré ou révoqué ; en créer un nouveau et mettre à jour l'URL du dépôt dans le Manager.
 - **Erreur de mémoire au build** : relancer le build ; si elle persiste, contacter le support Infomaniak.
