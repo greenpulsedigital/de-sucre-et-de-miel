@@ -9,7 +9,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/postcss.config.mjs",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_postcss_config_mjs",
-      "community": 26,
+      "community": 28,
       "norm_label": "postcss.config.mjs"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/next-env.d.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_next_env_d_ts",
-      "community": 27,
+      "community": 29,
       "norm_label": "next-env.d.ts"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/playwright.config.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_playwright_config_ts",
-      "community": 28,
+      "community": 30,
       "norm_label": "playwright.config.ts"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/next.config.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_next_config_ts",
-      "community": 29,
+      "community": 31,
       "norm_label": "next.config.ts"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/tests/a11y.spec.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_tests_a11y_spec_ts",
-      "community": 30,
+      "community": 32,
       "norm_label": "a11y.spec.ts"
     },
     {
@@ -54,8 +54,26 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/tests/site.spec.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_tests_site_spec_ts",
-      "community": 31,
+      "community": 33,
       "norm_label": "site.spec.ts"
+    },
+    {
+      "label": "init-prod.ts",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/scripts/init-prod.ts",
+      "source_location": "L1",
+      "id": "users_freydavid_documents_tarte_2027_scripts_init_prod_ts",
+      "community": 7,
+      "norm_label": "init-prod.ts"
+    },
+    {
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/scripts/init-prod.ts",
+      "source_location": "L17",
+      "id": "init_prod_run",
+      "community": 7,
+      "norm_label": "run()"
     },
     {
       "label": "seed.ts",
@@ -63,7 +81,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/scripts/seed.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_scripts_seed_ts",
-      "community": 3,
+      "community": 4,
       "norm_label": "seed.ts"
     },
     {
@@ -72,7 +90,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/scripts/seed.ts",
       "source_location": "L22",
       "id": "seed_placeholder",
-      "community": 3,
+      "community": 4,
       "norm_label": "placeholder()"
     },
     {
@@ -81,7 +99,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/scripts/seed.ts",
       "source_location": "L30",
       "id": "seed_main",
-      "community": 3,
+      "community": 4,
       "norm_label": "main()"
     },
     {
@@ -90,7 +108,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/scripts/create-admin.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_scripts_create_admin_ts",
-      "community": 32,
+      "community": 34,
       "norm_label": "create-admin.ts"
     },
     {
@@ -99,8 +117,17 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/scripts/set-hero.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_scripts_set_hero_ts",
-      "community": 33,
+      "community": 35,
       "norm_label": "set-hero.ts"
+    },
+    {
+      "label": "check-mail.ts",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/scripts/check-mail.ts",
+      "source_location": "L1",
+      "id": "users_freydavid_documents_tarte_2027_scripts_check_mail_ts",
+      "community": 36,
+      "norm_label": "check-mail.ts"
     },
     {
       "label": "payload.config.ts",
@@ -108,16 +135,16 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/payload.config.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_payload_config_ts",
-      "community": 9,
+      "community": 12,
       "norm_label": "payload.config.ts"
     },
     {
       "label": "databaseUrl()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/payload.config.ts",
-      "source_location": "L25",
+      "source_location": "L26",
       "id": "payload_config_databaseurl",
-      "community": 9,
+      "community": 12,
       "norm_label": "databaseurl()"
     },
     {
@@ -126,7 +153,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/payload-types.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_payload_types_ts",
-      "community": 34,
+      "community": 37,
       "norm_label": "payload-types.ts"
     },
     {
@@ -135,8 +162,44 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/globals/SiteSettings.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_globals_sitesettings_ts",
-      "community": 35,
+      "community": 38,
       "norm_label": "sitesettings.ts"
+    },
+    {
+      "label": "20261030_074336_initial.ts",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/migrations/20261030_074336_initial.ts",
+      "source_location": "L1",
+      "id": "users_freydavid_documents_tarte_2027_src_migrations_20261030_074336_initial_ts",
+      "community": 7,
+      "norm_label": "20261030_074336_initial.ts"
+    },
+    {
+      "label": "up()",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/migrations/20261030_074336_initial.ts",
+      "source_location": "L3",
+      "id": "20261030_074336_initial_up",
+      "community": 7,
+      "norm_label": "up()"
+    },
+    {
+      "label": "down()",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/migrations/20261030_074336_initial.ts",
+      "source_location": "L345",
+      "id": "20261030_074336_initial_down",
+      "community": 7,
+      "norm_label": "down()"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/migrations/index.ts",
+      "source_location": "L1",
+      "id": "users_freydavid_documents_tarte_2027_src_migrations_index_ts",
+      "community": 39,
+      "norm_label": "index.ts"
     },
     {
       "label": "robots.ts",
@@ -144,7 +207,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/robots.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_robots_ts",
-      "community": 10,
+      "community": 13,
       "norm_label": "robots.ts"
     },
     {
@@ -153,7 +216,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/robots.ts",
       "source_location": "L4",
       "id": "robots_robots",
-      "community": 10,
+      "community": 13,
       "norm_label": "robots()"
     },
     {
@@ -162,7 +225,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/sitemap.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_sitemap_ts",
-      "community": 11,
+      "community": 14,
       "norm_label": "sitemap.ts"
     },
     {
@@ -171,7 +234,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/sitemap.ts",
       "source_location": "L7",
       "id": "sitemap_sitemap",
-      "community": 11,
+      "community": 14,
       "norm_label": "sitemap()"
     },
     {
@@ -180,7 +243,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/global-not-found.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_global_not_found_tsx",
-      "community": 36,
+      "community": 40,
       "norm_label": "global-not-found.tsx"
     },
     {
@@ -189,7 +252,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/actions.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_site_actions_ts",
-      "community": 0,
+      "community": 1,
       "norm_label": "actions.ts"
     },
     {
@@ -198,7 +261,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/actions.ts",
       "source_location": "L9",
       "id": "actions_handle",
-      "community": 0,
+      "community": 1,
       "norm_label": "handle()"
     },
     {
@@ -207,7 +270,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/actions.ts",
       "source_location": "L71",
       "id": "actions_submitpro",
-      "community": 0,
+      "community": 1,
       "norm_label": "submitpro()"
     },
     {
@@ -216,7 +279,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/actions.ts",
       "source_location": "L72",
       "id": "actions_submitcontact",
-      "community": 0,
+      "community": 1,
       "norm_label": "submitcontact()"
     },
     {
@@ -225,7 +288,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/layout.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_site_layout_tsx",
-      "community": 37,
+      "community": 41,
       "norm_label": "layout.tsx"
     },
     {
@@ -234,7 +297,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/page.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_site_page_tsx",
-      "community": 38,
+      "community": 42,
       "norm_label": "page.tsx"
     },
     {
@@ -243,7 +306,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/not-found.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_site_not_found_tsx",
-      "community": 5,
+      "community": 8,
       "norm_label": "not-found.tsx"
     },
     {
@@ -252,7 +315,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(payload)/admin/[[...segments]]/not-found.tsx",
       "source_location": "L14",
       "id": "not_found_notfound",
-      "community": 5,
+      "community": 8,
       "norm_label": "notfound()"
     },
     {
@@ -261,7 +324,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/professionnels/page.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_site_professionnels_page_tsx",
-      "community": 39,
+      "community": 43,
       "norm_label": "page.tsx"
     },
     {
@@ -270,7 +333,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/confidentialite/page.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_site_confidentialite_page_tsx",
-      "community": 40,
+      "community": 44,
       "norm_label": "page.tsx"
     },
     {
@@ -279,7 +342,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/maison/page.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_site_maison_page_tsx",
-      "community": 41,
+      "community": 45,
       "norm_label": "page.tsx"
     },
     {
@@ -288,7 +351,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/contact/page.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_site_contact_page_tsx",
-      "community": 42,
+      "community": 46,
       "norm_label": "page.tsx"
     },
     {
@@ -297,7 +360,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/mentions-legales/page.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_site_mentions_legales_page_tsx",
-      "community": 12,
+      "community": 15,
       "norm_label": "page.tsx"
     },
     {
@@ -306,7 +369,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/mentions-legales/page.tsx",
       "source_location": "L12",
       "id": "page_h",
-      "community": 12,
+      "community": 15,
       "norm_label": "h()"
     },
     {
@@ -315,16 +378,16 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/creations/page.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_site_creations_page_tsx",
-      "community": 13,
+      "community": 16,
       "norm_label": "page.tsx"
     },
     {
       "label": "CreationsPage()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/creations/page.tsx",
-      "source_location": "L16",
+      "source_location": "L17",
       "id": "page_creationspage",
-      "community": 13,
+      "community": 16,
       "norm_label": "creationspage()"
     },
     {
@@ -333,17 +396,26 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/creations/[slug]/page.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_site_creations_slug_page_tsx",
-      "community": 1,
+      "community": 0,
       "norm_label": "page.tsx"
     },
     {
       "label": "generateStaticParams()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/creations/[slug]/page.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "id": "page_generatestaticparams",
-      "community": 1,
+      "community": 0,
       "norm_label": "generatestaticparams()"
+    },
+    {
+      "label": "artisanal()",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/creations/[slug]/page.tsx",
+      "source_location": "L40",
+      "id": "page_artisanal",
+      "community": 0,
+      "norm_label": "artisanal()"
     },
     {
       "label": "generateMetadata()",
@@ -351,35 +423,8 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(payload)/admin/[[...segments]]/page.tsx",
       "source_location": "L11",
       "id": "page_generatemetadata",
-      "community": 1,
+      "community": 0,
       "norm_label": "generatemetadata()"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/actualites/page.tsx",
-      "source_location": "L1",
-      "id": "users_freydavid_documents_tarte_2027_src_app_site_actualites_page_tsx",
-      "community": 43,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/actualites/[slug]/page.tsx",
-      "source_location": "L1",
-      "id": "users_freydavid_documents_tarte_2027_src_app_site_actualites_slug_page_tsx",
-      "community": 1,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "ArticlePage()",
-      "file_type": "code",
-      "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/actualites/[slug]/page.tsx",
-      "source_location": "L21",
-      "id": "page_articlepage",
-      "community": 1,
-      "norm_label": "articlepage()"
     },
     {
       "label": "layout.tsx",
@@ -387,7 +432,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(payload)/layout.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_payload_layout_tsx",
-      "community": 14,
+      "community": 17,
       "norm_label": "layout.tsx"
     },
     {
@@ -396,7 +441,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(payload)/layout.tsx",
       "source_location": "L16",
       "id": "layout_layout",
-      "community": 14,
+      "community": 17,
       "norm_label": "layout()"
     },
     {
@@ -405,7 +450,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(payload)/admin/importMap.js",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_payload_admin_importmap_js",
-      "community": 44,
+      "community": 47,
       "norm_label": "importmap.js"
     },
     {
@@ -414,7 +459,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(payload)/admin/[[...segments]]/page.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_payload_admin_segments_page_tsx",
-      "community": 1,
+      "community": 0,
       "norm_label": "page.tsx"
     },
     {
@@ -423,7 +468,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(payload)/admin/[[...segments]]/page.tsx",
       "source_location": "L14",
       "id": "page_page",
-      "community": 1,
+      "community": 0,
       "norm_label": "page()"
     },
     {
@@ -432,7 +477,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(payload)/admin/[[...segments]]/not-found.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_payload_admin_segments_not_found_tsx",
-      "community": 5,
+      "community": 8,
       "norm_label": "not-found.tsx"
     },
     {
@@ -441,7 +486,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(payload)/admin/[[...segments]]/not-found.tsx",
       "source_location": "L11",
       "id": "not_found_generatemetadata",
-      "community": 5,
+      "community": 8,
       "norm_label": "generatemetadata()"
     },
     {
@@ -450,7 +495,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(payload)/api/[...slug]/route.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_app_payload_api_slug_route_ts",
-      "community": 45,
+      "community": 48,
       "norm_label": "route.ts"
     },
     {
@@ -459,17 +504,26 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Hero.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_components_hero_tsx",
-      "community": 15,
+      "community": 3,
       "norm_label": "hero.tsx"
     },
     {
-      "label": "Hero()",
+      "label": "rank()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Hero.tsx",
-      "source_location": "L20",
-      "id": "hero_hero",
-      "community": 15,
-      "norm_label": "hero()"
+      "source_location": "L18",
+      "id": "hero_rank",
+      "community": 3,
+      "norm_label": "rank()"
+    },
+    {
+      "label": "start()",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Hero.tsx",
+      "source_location": "L34",
+      "id": "hero_start",
+      "community": 3,
+      "norm_label": "start()"
     },
     {
       "label": "JsonLd.tsx",
@@ -477,7 +531,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/JsonLd.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_components_jsonld_tsx",
-      "community": 16,
+      "community": 18,
       "norm_label": "jsonld.tsx"
     },
     {
@@ -486,7 +540,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/JsonLd.tsx",
       "source_location": "L1",
       "id": "jsonld_jsonld",
-      "community": 16,
+      "community": 18,
       "norm_label": "jsonld()"
     },
     {
@@ -495,7 +549,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/blocks.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_components_blocks_tsx",
-      "community": 17,
+      "community": 19,
       "norm_label": "blocks.tsx"
     },
     {
@@ -504,7 +558,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/blocks.tsx",
       "source_location": "L9",
       "id": "blocks_sectionheader",
-      "community": 17,
+      "community": 19,
       "norm_label": "sectionheader()"
     },
     {
@@ -513,17 +567,53 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/MaskedWords.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_components_maskedwords_tsx",
-      "community": 18,
+      "community": 20,
       "norm_label": "maskedwords.tsx"
     },
     {
       "label": "MaskedWords()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/MaskedWords.tsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "id": "maskedwords_maskedwords",
-      "community": 18,
+      "community": 20,
       "norm_label": "maskedwords()"
+    },
+    {
+      "label": "CategoryContent.tsx",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/CategoryContent.tsx",
+      "source_location": "L1",
+      "id": "users_freydavid_documents_tarte_2027_src_components_categorycontent_tsx",
+      "community": 9,
+      "norm_label": "categorycontent.tsx"
+    },
+    {
+      "label": "CategoryContent()",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/CategoryContent.tsx",
+      "source_location": "L10",
+      "id": "categorycontent_categorycontent",
+      "community": 9,
+      "norm_label": "categorycontent()"
+    },
+    {
+      "label": "RecipeLinks()",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/CategoryContent.tsx",
+      "source_location": "L16",
+      "id": "categorycontent_recipelinks",
+      "community": 9,
+      "norm_label": "recipelinks()"
+    },
+    {
+      "label": "ProBlock()",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/CategoryContent.tsx",
+      "source_location": "L29",
+      "id": "categorycontent_problock",
+      "community": 9,
+      "norm_label": "problock()"
     },
     {
       "label": "WordReveal.tsx",
@@ -531,16 +621,16 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/WordReveal.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_components_wordreveal_tsx",
-      "community": 19,
+      "community": 21,
       "norm_label": "wordreveal.tsx"
     },
     {
       "label": "WordReveal()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/WordReveal.tsx",
-      "source_location": "L11",
+      "source_location": "L9",
       "id": "wordreveal_wordreveal",
-      "community": 19,
+      "community": 21,
       "norm_label": "wordreveal()"
     },
     {
@@ -549,7 +639,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Footer.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_components_footer_tsx",
-      "community": 46,
+      "community": 49,
       "norm_label": "footer.tsx"
     },
     {
@@ -558,7 +648,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Photo.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_components_photo_tsx",
-      "community": 20,
+      "community": 22,
       "norm_label": "photo.tsx"
     },
     {
@@ -567,7 +657,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Photo.tsx",
       "source_location": "L16",
       "id": "photo_photo",
-      "community": 20,
+      "community": 22,
       "norm_label": "photo()"
     },
     {
@@ -576,16 +666,16 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/SmoothScroll.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_components_smoothscroll_tsx",
-      "community": 21,
+      "community": 23,
       "norm_label": "smoothscroll.tsx"
     },
     {
       "label": "SmoothScroll()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/SmoothScroll.tsx",
-      "source_location": "L12",
+      "source_location": "L13",
       "id": "smoothscroll_smoothscroll",
-      "community": 21,
+      "community": 23,
       "norm_label": "smoothscroll()"
     },
     {
@@ -594,7 +684,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Header.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_components_header_tsx",
-      "community": 47,
+      "community": 50,
       "norm_label": "header.tsx"
     },
     {
@@ -603,7 +693,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/forms.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_components_forms_tsx",
-      "community": 48,
+      "community": 51,
       "norm_label": "forms.tsx"
     },
     {
@@ -612,7 +702,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/MobileMenu.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_components_mobilemenu_tsx",
-      "community": 22,
+      "community": 24,
       "norm_label": "mobilemenu.tsx"
     },
     {
@@ -621,7 +711,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/MobileMenu.tsx",
       "source_location": "L8",
       "id": "mobilemenu_mobilemenu",
-      "community": 22,
+      "community": 24,
       "norm_label": "mobilemenu()"
     },
     {
@@ -630,7 +720,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Carousel.tsx",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_components_carousel_tsx",
-      "community": 7,
+      "community": 11,
       "norm_label": "carousel.tsx"
     },
     {
@@ -639,7 +729,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Carousel.tsx",
       "source_location": "L16",
       "id": "carousel_onscroll",
-      "community": 7,
+      "community": 11,
       "norm_label": "onscroll()"
     },
     {
@@ -648,7 +738,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Carousel.tsx",
       "source_location": "L21",
       "id": "carousel_go",
-      "community": 7,
+      "community": 11,
       "norm_label": "go()"
     },
     {
@@ -691,7 +781,7 @@
       "label": "breadcrumbSchema()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/schema.ts",
-      "source_location": "L37",
+      "source_location": "L38",
       "id": "schema_breadcrumbschema",
       "community": 2,
       "norm_label": "breadcrumbschema()"
@@ -700,16 +790,25 @@
       "label": "productSchema()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/schema.ts",
-      "source_location": "L45",
+      "source_location": "L50",
       "id": "schema_productschema",
       "community": 2,
       "norm_label": "productschema()"
     },
     {
+      "label": "itemListSchema()",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/schema.ts",
+      "source_location": "L69",
+      "id": "schema_itemlistschema",
+      "community": 2,
+      "norm_label": "itemlistschema()"
+    },
+    {
       "label": "articleSchema()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/schema.ts",
-      "source_location": "L60",
+      "source_location": "L79",
       "id": "schema_articleschema",
       "community": 2,
       "norm_label": "articleschema()"
@@ -720,7 +819,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/data.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_lib_data_ts",
-      "community": 1,
+      "community": 0,
       "norm_label": "data.ts"
     },
     {
@@ -729,7 +828,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/data.ts",
       "source_location": "L88",
       "id": "data_media",
-      "community": 1,
+      "community": 0,
       "norm_label": "media()"
     },
     {
@@ -738,7 +837,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/data.ts",
       "source_location": "L91",
       "id": "data_category",
-      "community": 1,
+      "community": 0,
       "norm_label": "category()"
     },
     {
@@ -747,7 +846,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/slug.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_lib_slug_ts",
-      "community": 3,
+      "community": 4,
       "norm_label": "slug.ts"
     },
     {
@@ -756,7 +855,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/slug.ts",
       "source_location": "L3",
       "id": "slug_toslug",
-      "community": 3,
+      "community": 4,
       "norm_label": "toslug()"
     },
     {
@@ -765,7 +864,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/slug.ts",
       "source_location": "L12",
       "id": "slug_slugfield",
-      "community": 3,
+      "community": 4,
       "norm_label": "slugfield()"
     },
     {
@@ -774,7 +873,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/availability.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_lib_availability_ts",
-      "community": 23,
+      "community": 25,
       "norm_label": "availability.ts"
     },
     {
@@ -783,8 +882,17 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/availability.ts",
       "source_location": "L4",
       "id": "availability_isavailable",
-      "community": 23,
+      "community": 25,
       "norm_label": "isavailable()"
+    },
+    {
+      "label": "storage.ts",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/storage.ts",
+      "source_location": "L1",
+      "id": "users_freydavid_documents_tarte_2027_src_lib_storage_ts",
+      "community": 52,
+      "norm_label": "storage.ts"
     },
     {
       "label": "site.ts",
@@ -792,7 +900,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/site.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_lib_site_ts",
-      "community": 49,
+      "community": 53,
       "norm_label": "site.ts"
     },
     {
@@ -801,7 +909,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/motion.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_lib_motion_ts",
-      "community": 8,
+      "community": 3,
       "norm_label": "motion.ts"
     },
     {
@@ -810,16 +918,25 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/motion.ts",
       "source_location": "L2",
       "id": "motion_reducedmotion",
-      "community": 8,
+      "community": 3,
       "norm_label": "reducedmotion()"
+    },
+    {
+      "label": "watchReducedMotion()",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/motion.ts",
+      "source_location": "L7",
+      "id": "motion_watchreducedmotion",
+      "community": 3,
+      "norm_label": "watchreducedmotion()"
     },
     {
       "label": "finePointer()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/motion.ts",
-      "source_location": "L7",
+      "source_location": "L14",
       "id": "motion_finepointer",
-      "community": 8,
+      "community": 3,
       "norm_label": "finepointer()"
     },
     {
@@ -828,7 +945,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/forms.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_lib_forms_ts",
-      "community": 4,
+      "community": 5,
       "norm_label": "forms.ts"
     },
     {
@@ -837,7 +954,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/forms.ts",
       "source_location": "L10",
       "id": "forms_req",
-      "community": 4,
+      "community": 5,
       "norm_label": "req()"
     },
     {
@@ -846,7 +963,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/forms.ts",
       "source_location": "L12",
       "id": "forms_opt",
-      "community": 4,
+      "community": 5,
       "norm_label": "opt()"
     },
     {
@@ -855,7 +972,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/forms.ts",
       "source_location": "L14",
       "id": "forms_normalizesiret",
-      "community": 4,
+      "community": 5,
       "norm_label": "normalizesiret()"
     },
     {
@@ -864,7 +981,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/forms.ts",
       "source_location": "L15",
       "id": "forms_isvalidsiret",
-      "community": 4,
+      "community": 5,
       "norm_label": "isvalidsiret()"
     },
     {
@@ -873,7 +990,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/forms.ts",
       "source_location": "L82",
       "id": "forms_sniffimage",
-      "community": 4,
+      "community": 5,
       "norm_label": "sniffimage()"
     },
     {
@@ -882,7 +999,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/payload.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_lib_payload_ts",
-      "community": 0,
+      "community": 1,
       "norm_label": "payload.ts"
     },
     {
@@ -891,7 +1008,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/payload.ts",
       "source_location": "L4",
       "id": "payload_getclient",
-      "community": 0,
+      "community": 1,
       "norm_label": "getclient()"
     },
     {
@@ -900,7 +1017,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/ratelimit.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_lib_ratelimit_ts",
-      "community": 0,
+      "community": 1,
       "norm_label": "ratelimit.ts"
     },
     {
@@ -909,7 +1026,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/ratelimit.ts",
       "source_location": "L5",
       "id": "ratelimit_ratelimit",
-      "community": 0,
+      "community": 1,
       "norm_label": "ratelimit()"
     },
     {
@@ -918,7 +1035,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/format.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_lib_format_ts",
-      "community": 6,
+      "community": 10,
       "norm_label": "format.ts"
     },
     {
@@ -927,7 +1044,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/format.ts",
       "source_location": "L3",
       "id": "format_pricetext",
-      "community": 6,
+      "community": 10,
       "norm_label": "pricetext()"
     },
     {
@@ -936,7 +1053,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/format.ts",
       "source_location": "L6",
       "id": "format_datefr",
-      "community": 6,
+      "community": 10,
       "norm_label": "datefr()"
     },
     {
@@ -945,7 +1062,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/format.ts",
       "source_location": "L9",
       "id": "format_telhref",
-      "community": 6,
+      "community": 10,
       "norm_label": "telhref()"
     },
     {
@@ -954,16 +1071,16 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/seo.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_lib_seo_ts",
-      "community": 1,
+      "community": 0,
       "norm_label": "seo.ts"
     },
     {
       "label": "buildMetadata()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/seo.ts",
-      "source_location": "L5",
+      "source_location": "L12",
       "id": "seo_buildmetadata",
-      "community": 1,
+      "community": 0,
       "norm_label": "buildmetadata()"
     },
     {
@@ -972,7 +1089,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/revalidate.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_lib_revalidate_ts",
-      "community": 24,
+      "community": 26,
       "norm_label": "revalidate.ts"
     },
     {
@@ -981,7 +1098,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/revalidate.ts",
       "source_location": "L4",
       "id": "revalidate_revalidatesite",
-      "community": 24,
+      "community": 26,
       "norm_label": "revalidatesite()"
     },
     {
@@ -990,7 +1107,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_lib_mail_ts",
-      "community": 0,
+      "community": 6,
       "norm_label": "mail.ts"
     },
     {
@@ -999,7 +1116,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
       "source_location": "L3",
       "id": "mail_clean",
-      "community": 0,
+      "community": 6,
       "norm_label": "clean()"
     },
     {
@@ -1008,25 +1125,34 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
       "source_location": "L5",
       "id": "mail_mailconfigured",
-      "community": 0,
+      "community": 6,
       "norm_label": "mailconfigured()"
     },
     {
       "label": "getTransporter()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
-      "source_location": "L8",
+      "source_location": "L12",
       "id": "mail_gettransporter",
-      "community": 0,
+      "community": 6,
       "norm_label": "gettransporter()"
+    },
+    {
+      "label": "verifyMail()",
+      "file_type": "code",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
+      "source_location": "L25",
+      "id": "mail_verifymail",
+      "community": 6,
+      "norm_label": "verifymail()"
     },
     {
       "label": "sendMail()",
       "file_type": "code",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
-      "source_location": "L17",
+      "source_location": "L28",
       "id": "mail_sendmail",
-      "community": 0,
+      "community": 6,
       "norm_label": "sendmail()"
     },
     {
@@ -1035,7 +1161,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/collections/RequestFiles.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_collections_requestfiles_ts",
-      "community": 50,
+      "community": 54,
       "norm_label": "requestfiles.ts"
     },
     {
@@ -1044,7 +1170,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/collections/Requests.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_collections_requests_ts",
-      "community": 25,
+      "community": 27,
       "norm_label": "requests.ts"
     },
     {
@@ -1053,7 +1179,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/collections/Requests.ts",
       "source_location": "L3",
       "id": "requests_staff",
-      "community": 25,
+      "community": 27,
       "norm_label": "staff()"
     },
     {
@@ -1062,7 +1188,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/collections/Articles.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_collections_articles_ts",
-      "community": 51,
+      "community": 55,
       "norm_label": "articles.ts"
     },
     {
@@ -1071,7 +1197,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/collections/Products.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_collections_products_ts",
-      "community": 52,
+      "community": 56,
       "norm_label": "products.ts"
     },
     {
@@ -1080,7 +1206,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/collections/Categories.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_collections_categories_ts",
-      "community": 53,
+      "community": 57,
       "norm_label": "categories.ts"
     },
     {
@@ -1089,7 +1215,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/collections/Testimonials.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_collections_testimonials_ts",
-      "community": 54,
+      "community": 58,
       "norm_label": "testimonials.ts"
     },
     {
@@ -1098,7 +1224,7 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/collections/Users.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_collections_users_ts",
-      "community": 55,
+      "community": 59,
       "norm_label": "users.ts"
     },
     {
@@ -1107,11 +1233,47 @@
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/collections/Media.ts",
       "source_location": "L1",
       "id": "users_freydavid_documents_tarte_2027_src_collections_media_ts",
-      "community": 56,
+      "community": 60,
       "norm_label": "media.ts"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/scripts/init-prod.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "users_freydavid_documents_tarte_2027_scripts_init_prod_ts",
+      "_tgt": "init_prod_run",
+      "source": "users_freydavid_documents_tarte_2027_scripts_init_prod_ts",
+      "target": "init_prod_run",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/migrations/20261030_074336_initial.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "20261030_074336_initial_up",
+      "_tgt": "init_prod_run",
+      "source": "init_prod_run",
+      "target": "20261030_074336_initial_up"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/migrations/20261030_074336_initial.ts",
+      "source_location": "L346",
+      "weight": 1.0,
+      "_src": "20261030_074336_initial_down",
+      "_tgt": "init_prod_run",
+      "source": "init_prod_run",
+      "target": "20261030_074336_initial_down"
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -1164,12 +1326,36 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/payload.config.ts",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_payload_config_ts",
       "_tgt": "payload_config_databaseurl",
       "source": "users_freydavid_documents_tarte_2027_src_payload_config_ts",
       "target": "payload_config_databaseurl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/migrations/20261030_074336_initial.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "users_freydavid_documents_tarte_2027_src_migrations_20261030_074336_initial_ts",
+      "_tgt": "20261030_074336_initial_up",
+      "source": "users_freydavid_documents_tarte_2027_src_migrations_20261030_074336_initial_ts",
+      "target": "20261030_074336_initial_up",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/migrations/20261030_074336_initial.ts",
+      "source_location": "L345",
+      "weight": 1.0,
+      "_src": "users_freydavid_documents_tarte_2027_src_migrations_20261030_074336_initial_ts",
+      "_tgt": "20261030_074336_initial_down",
+      "source": "users_freydavid_documents_tarte_2027_src_migrations_20261030_074336_initial_ts",
+      "target": "20261030_074336_initial_down",
       "confidence_score": 1.0
     },
     {
@@ -1329,18 +1515,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/actualites/[slug]/page.tsx",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_src": "not_found_notfound",
-      "_tgt": "page_articlepage",
-      "source": "not_found_notfound",
-      "target": "page_articlepage"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/mentions-legales/page.tsx",
@@ -1356,7 +1530,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/creations/page.tsx",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_app_site_creations_page_tsx",
       "_tgt": "page_creationspage",
@@ -1368,7 +1542,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/creations/[slug]/page.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_app_site_creations_slug_page_tsx",
       "_tgt": "page_generatestaticparams",
@@ -1380,7 +1554,19 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/creations/[slug]/page.tsx",
-      "source_location": "L25",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_src": "users_freydavid_documents_tarte_2027_src_app_site_creations_slug_page_tsx",
+      "_tgt": "page_artisanal",
+      "source": "users_freydavid_documents_tarte_2027_src_app_site_creations_slug_page_tsx",
+      "target": "page_artisanal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/creations/[slug]/page.tsx",
+      "source_location": "L43",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_app_site_creations_slug_page_tsx",
       "_tgt": "page_generatemetadata",
@@ -1389,15 +1575,15 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
+      "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/actualites/[slug]/page.tsx",
-      "source_location": "L15",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/creations/[slug]/page.tsx",
+      "source_location": "L59",
       "weight": 1.0,
-      "_src": "users_freydavid_documents_tarte_2027_src_app_site_actualites_slug_page_tsx",
-      "_tgt": "page_generatemetadata",
-      "source": "page_generatemetadata",
-      "target": "users_freydavid_documents_tarte_2027_src_app_site_actualites_slug_page_tsx",
+      "_src": "page_generatemetadata",
+      "_tgt": "page_artisanal",
+      "source": "page_artisanal",
+      "target": "page_generatemetadata",
       "confidence_score": 1.0
     },
     {
@@ -1434,30 +1620,6 @@
       "_src": "page_generatemetadata",
       "_tgt": "data_media",
       "source": "page_generatemetadata",
-      "target": "data_media"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/actualites/[slug]/page.tsx",
-      "source_location": "L21",
-      "weight": 1.0,
-      "_src": "users_freydavid_documents_tarte_2027_src_app_site_actualites_slug_page_tsx",
-      "_tgt": "page_articlepage",
-      "source": "users_freydavid_documents_tarte_2027_src_app_site_actualites_slug_page_tsx",
-      "target": "page_articlepage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "/Users/freydavid/Documents/tarte 2027/src/app/(site)/actualites/[slug]/page.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "_src": "page_articlepage",
-      "_tgt": "data_media",
-      "source": "page_articlepage",
       "target": "data_media"
     },
     {
@@ -1500,13 +1662,49 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Hero.tsx",
-      "source_location": "L20",
+      "source_location": "L18",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_components_hero_tsx",
-      "_tgt": "hero_hero",
+      "_tgt": "hero_rank",
       "source": "users_freydavid_documents_tarte_2027_src_components_hero_tsx",
-      "target": "hero_hero",
+      "target": "hero_rank",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Hero.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "users_freydavid_documents_tarte_2027_src_components_hero_tsx",
+      "_tgt": "hero_start",
+      "source": "users_freydavid_documents_tarte_2027_src_components_hero_tsx",
+      "target": "hero_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Hero.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "hero_start",
+      "_tgt": "motion_reducedmotion",
+      "source": "hero_start",
+      "target": "motion_reducedmotion"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/Hero.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "hero_start",
+      "_tgt": "motion_finepointer",
+      "source": "hero_start",
+      "target": "motion_finepointer"
     },
     {
       "relation": "contains",
@@ -1536,7 +1734,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/MaskedWords.tsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_components_maskedwords_tsx",
       "_tgt": "maskedwords_maskedwords",
@@ -1547,8 +1745,44 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/CategoryContent.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "users_freydavid_documents_tarte_2027_src_components_categorycontent_tsx",
+      "_tgt": "categorycontent_categorycontent",
+      "source": "users_freydavid_documents_tarte_2027_src_components_categorycontent_tsx",
+      "target": "categorycontent_categorycontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/CategoryContent.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "users_freydavid_documents_tarte_2027_src_components_categorycontent_tsx",
+      "_tgt": "categorycontent_recipelinks",
+      "source": "users_freydavid_documents_tarte_2027_src_components_categorycontent_tsx",
+      "target": "categorycontent_recipelinks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/CategoryContent.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "users_freydavid_documents_tarte_2027_src_components_categorycontent_tsx",
+      "_tgt": "categorycontent_problock",
+      "source": "users_freydavid_documents_tarte_2027_src_components_categorycontent_tsx",
+      "target": "categorycontent_problock",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/WordReveal.tsx",
-      "source_location": "L11",
+      "source_location": "L9",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_components_wordreveal_tsx",
       "_tgt": "wordreveal_wordreveal",
@@ -1572,7 +1806,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/components/SmoothScroll.tsx",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_components_smoothscroll_tsx",
       "_tgt": "smoothscroll_smoothscroll",
@@ -1656,7 +1890,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/schema.ts",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_lib_schema_ts",
       "_tgt": "schema_breadcrumbschema",
@@ -1668,7 +1902,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/schema.ts",
-      "source_location": "L45",
+      "source_location": "L50",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_lib_schema_ts",
       "_tgt": "schema_productschema",
@@ -1680,7 +1914,19 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/schema.ts",
-      "source_location": "L60",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_src": "users_freydavid_documents_tarte_2027_src_lib_schema_ts",
+      "_tgt": "schema_itemlistschema",
+      "source": "users_freydavid_documents_tarte_2027_src_lib_schema_ts",
+      "target": "schema_itemlistschema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/schema.ts",
+      "source_location": "L79",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_lib_schema_ts",
       "_tgt": "schema_articleschema",
@@ -1692,7 +1938,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/schema.ts",
-      "source_location": "L68",
+      "source_location": "L87",
       "weight": 1.0,
       "_src": "schema_articleschema",
       "_tgt": "schema_abs",
@@ -1777,6 +2023,18 @@
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/motion.ts",
       "source_location": "L7",
+      "weight": 1.0,
+      "_src": "users_freydavid_documents_tarte_2027_src_lib_motion_ts",
+      "_tgt": "motion_watchreducedmotion",
+      "source": "users_freydavid_documents_tarte_2027_src_lib_motion_ts",
+      "target": "motion_watchreducedmotion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/motion.ts",
+      "source_location": "L14",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_lib_motion_ts",
       "_tgt": "motion_finepointer",
@@ -1920,7 +2178,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/seo.ts",
-      "source_location": "L5",
+      "source_location": "L12",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_lib_seo_ts",
       "_tgt": "seo_buildmetadata",
@@ -1968,7 +2226,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
-      "source_location": "L8",
+      "source_location": "L12",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_lib_mail_ts",
       "_tgt": "mail_gettransporter",
@@ -1980,7 +2238,19 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
-      "source_location": "L17",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "users_freydavid_documents_tarte_2027_src_lib_mail_ts",
+      "_tgt": "mail_verifymail",
+      "source": "users_freydavid_documents_tarte_2027_src_lib_mail_ts",
+      "target": "mail_verifymail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
+      "source_location": "L28",
       "weight": 1.0,
       "_src": "users_freydavid_documents_tarte_2027_src_lib_mail_ts",
       "_tgt": "mail_sendmail",
@@ -1992,7 +2262,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
-      "source_location": "L22",
+      "source_location": "L33",
       "weight": 1.0,
       "_src": "mail_sendmail",
       "_tgt": "mail_clean",
@@ -2004,7 +2274,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
-      "source_location": "L18",
+      "source_location": "L29",
       "weight": 1.0,
       "_src": "mail_sendmail",
       "_tgt": "mail_mailconfigured",
@@ -2016,7 +2286,19 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
-      "source_location": "L19",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "mail_verifymail",
+      "_tgt": "mail_gettransporter",
+      "source": "mail_gettransporter",
+      "target": "mail_verifymail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/freydavid/Documents/tarte 2027/src/lib/mail.ts",
+      "source_location": "L30",
       "weight": 1.0,
       "_src": "mail_sendmail",
       "_tgt": "mail_gettransporter",

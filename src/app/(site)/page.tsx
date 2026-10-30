@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Photo } from '@/components/Photo'
 import { Hero } from '@/components/Hero'
@@ -10,8 +11,9 @@ import { buildMetadata } from '@/lib/seo'
 export const revalidate = 300
 
 export const metadata = buildMetadata({
-  title: 'De Sucre & de Miel — Tartes alpines artisanales pour professionnels',
-  description: 'Tartes alpines artisanales fabriquées à Montboucher-sur-Jabron, vendues uniquement aux professionnels : épiceries, primeurs, gîtes. 9 recettes, 3 tailles.',
+  title: 'Tartes alpines artisanales pour professionnels | De Sucre & de Miel',
+  absoluteTitle: true,
+  description: 'Fabricant artisanal de tartes alpines à la confiture et de pains d’épices dans la Drôme. Fournisseur pour professionnels partout en France.',
   path: '/',
 })
 
@@ -21,7 +23,6 @@ export default async function HomePage() {
     getProducts(),
     getTestimonials(),
   ])
-  const hero = media(settings.heroImage)
   const sizePhoto = media((featured.find((p) => p.slug === 'tarte-abricot') ?? featured[0])?.images?.[0]?.image)
   const quotePhoto = media(featured.find((p) => p.slug?.startsWith('pain-d-epices'))?.images?.[0]?.image)
 
@@ -29,10 +30,10 @@ export default async function HomePage() {
     <>
       <SmoothScroll />
 
-      {/* HERO : titre fort + photo d'ambiance en arche, pas de slider ni de vidéo */}
+      {/* HERO : titre fort sur fond crème + tarte au citron qui tourne au défilement */}
       <Hero
         eyebrow="Vente uniquement aux professionnels"
-        title="Des tartes alpines pour votre comptoir."
+        title="Tartes alpines et pains d’épices artisanaux pour les professionnels"
         lead="Neuf recettes en trois tailles, plus des pains d’épices. Fabriquées à la main par William Frachisse, livrées dans toute la France."
         ctas={
           <>
@@ -40,8 +41,7 @@ export default async function HomePage() {
             <Link href="/creations" className="btn btn-secondary">Voir la gamme</Link>
           </>
         }
-        caption="Image d’illustration"
-        photo={<Photo media={hero} size="wide" quality={85} sizes="(min-width: 48rem) 35rem, 22rem" priority className="object-[50%_62%]" fallbackLabel="Une tarte alpine artisanale face aux sommets" />}
+        visual={<Image src="/images/Tarte-citron.webp" alt="Tarte au citron artisanale, vue du dessus" width={1024} height={1024} sizes="(min-width: 48rem) 35rem, 22rem" priority className="h-full w-full object-contain" />}
       />
 
       {/* BANDEAU */}
@@ -56,7 +56,7 @@ export default async function HomePage() {
         <div className="container-x">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end md:gap-12">
             <WordReveal text="La gamme, en un coup d’œil." className="max-w-3xl" />
-            <p className="max-w-md text-lg">Myrtille, abricot, framboise, fraise, citron, chocolat, praline, mendiant et noix, chacune en 28, 24 et 14 cm. Et trois pains d’épices.</p>
+            <p className="max-w-md text-lg">Myrtille, abricot, framboise, fraise, citron, chocolat, praline, mendiant et noix : <Link href="/creations/tartes-alpines" className="underline">nos neuf tartes alpines</Link>, chacune en 28, 24 et 14 cm. Et trois <Link href="/creations/pains-d-epices" className="underline">pains d’épices artisanaux</Link>.</p>
           </div>
           <div className="mt-10 md:mt-14"><ProductGrid products={featured} /></div>
           <p className="mt-10"><Link href="/creations" className="btn btn-secondary">Voir tous les produits</Link></p>

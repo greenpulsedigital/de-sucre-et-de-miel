@@ -45,13 +45,44 @@ export function sizesText(p: Pick<Product, 'formats'>) {
   return cm.length > 0 && cm.every(Boolean) ? `${cm.join(' · ')} cm` : labels.join(' · ')
 }
 
+/** Illustrations des parfums de pain d'épices : les trois partagent la même photo, la pastille les distingue. */
+const FLAVOR_ICONS: Record<string, ReactNode> = {
+  'pain-d-epices-orange': (
+    <svg viewBox="0 0 48 48" className="h-full w-full">
+      <circle cx="24" cy="27" r="16" fill="#f0912f" />
+      <circle cx="24" cy="27" r="16" fill="none" stroke="#c96a12" strokeWidth="1.5" />
+      <circle cx="18" cy="22" r="1" fill="#f9b968" /><circle cx="29" cy="31" r="1" fill="#f9b968" /><circle cx="20" cy="33" r="1" fill="#f9b968" /><circle cx="30" cy="21" r="1" fill="#f9b968" />
+      <ellipse cx="17.5" cy="21" rx="4" ry="2.5" fill="#fbc98a" opacity=".7" transform="rotate(-35 17.5 21)" />
+      <path d="M24 11.5v-3" stroke="#6b4a2a" strokeWidth="2" strokeLinecap="round" />
+      <path d="M25 10c3-4.5 8.5-5 11-3.5-1.5 4-6.5 5.5-11 3.5Z" fill="#5f9a54" />
+    </svg>
+  ),
+  'pain-d-epices-figue': (
+    <svg viewBox="0 0 48 48" className="h-full w-full">
+      <path d="M24 9c2 0 3 2 3.5 4.5C34 17 39 23 39 30c0 7.5-6.7 12-15 12S9 37.5 9 30c0-7 5-13 11.5-16.5C21 11 22 9 24 9Z" fill="#7a3f6e" />
+      <path d="M24 9c2 0 3 2 3.5 4.5C34 17 39 23 39 30c0 7.5-6.7 12-15 12S9 37.5 9 30c0-7 5-13 11.5-16.5C21 11 22 9 24 9Z" fill="none" stroke="#552a4c" strokeWidth="1.5" />
+      <path d="M16 24c-2 3-2.5 7-1 10" stroke="#a96a9c" strokeWidth="2" strokeLinecap="round" fill="none" />
+      <path d="M24 9V5" stroke="#6b4a2a" strokeWidth="2" strokeLinecap="round" />
+      <path d="M24 7c-2.5-3.5-7-4-9-2.5 1.5 3.5 5.5 4.5 9 2.5Z" fill="#5f9a54" />
+    </svg>
+  ),
+}
+
+/** Pastille illustrée du parfum (orange, figue), décorative : le nom du produit l'énonce déjà. */
+export function FlavorBadge({ slug, className = '' }: { slug?: string | null; className?: string }) {
+  const icon = slug && FLAVOR_ICONS[slug]
+  if (!icon) return null
+  return <span aria-hidden="true" className={`absolute bottom-3 right-3 z-10 drop-shadow-sm ${className}`}>{icon}</span>
+}
+
 export function ProductCard({ product, priority }: { product: Product; priority?: boolean }) {
   const img = media(product.images?.[0]?.image)
   const price = priceText(product)
   return (
     <article className="reveal h-full">
       <Link href={`/creations/${product.slug}`} className="flex h-full flex-col overflow-hidden rounded-[1.75rem] no-underline transition-transform duration-200 hover:-translate-y-1" style={{ background: tileBg(product.slug) }}>
-        <div className="aspect-[6/5]">
+        <div className="relative aspect-[6/5]">
+          <FlavorBadge slug={product.slug} className="h-11 w-11 md:bottom-5 md:right-5 md:h-14 md:w-14" />
           <Photo media={img} size="card" fit={product.slug?.startsWith('pain-d-epices') ? 'cover' : 'contain'} sizes="(min-width: 64rem) 24rem, (min-width: 40rem) 45vw, 46vw" priority={priority} fallbackLabel={product.name} />
         </div>
         <div className="mt-auto px-4 pb-5 pt-4 md:px-8 md:pb-8">
@@ -93,7 +124,7 @@ export function ImageTextSection({ slot, image, staticImage, imagePosition = '50
         {slot ? (
           <div className={`reveal ${reverse ? 'md:order-2' : ''}`}>{slot}</div>
         ) : (
-        <div className={`reveal aspect-[4/5] overflow-hidden rounded-sm md:aspect-[5/6] ${reverse ? 'md:order-2' : ''}`}>
+        <div className={`reveal aspect-[4/5] overflow-hidden rounded-[2rem] md:aspect-[5/6] ${reverse ? 'md:order-2' : ''}`}>
           {staticImage ? (
             <Image src={staticImage} alt={imageAlt ?? ''} width={1463} height={1462} sizes="(min-width: 48rem) 45vw, 92vw" className="h-full w-full object-cover" style={{ objectPosition: imagePosition }} />
           ) : (

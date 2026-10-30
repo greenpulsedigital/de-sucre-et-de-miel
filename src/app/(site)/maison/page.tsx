@@ -21,8 +21,8 @@ const VALEURS = [
 ]
 
 export const metadata = buildMetadata({
-  title: 'La maison — William Frachisse, pâtissier-boulanger',
-  description: 'William Frachisse, pâtissier-boulanger natif des Hautes-Alpes, fabrique des tartes aux fruits et des pains d’épices artisanaux pour les professionnels, livrés dans toute la France.',
+  title: 'L’atelier de William Frachisse (Drôme)',
+  description: 'Natif des Hautes-Alpes, le pâtissier-boulanger William Frachisse fabrique à la main tartes alpines et pains d’épices dans son atelier de la Drôme.',
   path: '/maison',
 })
 
@@ -34,7 +34,7 @@ export default async function MaisonPage() {
       <section className="section !pt-8">
         <div className="container-x">
           <SectionHeader as="h1" eyebrow="La maison" title="Des tartes alpines et des pains d’épices, faits main." className="!max-w-4xl [&_h1]:!text-[clamp(2.25rem,4.2vw,4rem)]" />
-          <div className="card-img mt-10 aspect-[16/9]"><Image src="/images/maison-hero.webp" alt="Une tarte aux fruits rouges en croisillons posée sur un linge, à côté d’un pot de confiture, face aux sommets alpins au lever du soleil" width={2500} height={1414} quality={90} sizes="(min-width: 76rem) 72rem, 92vw" priority className="h-full w-full object-cover" /></div>
+          <div className="card-img mt-10 aspect-[2042/1340] rounded-[2rem]"><Image src="/images/Couv-will.jpg" alt="Trois abeilles dessinées à la main, vert, sable et corail, au-dessus du nom « De Sucre et de Miel » sur fond noir" width={2042} height={1340} quality={90} sizes="(min-width: 76rem) 72rem, 92vw" priority className="h-full w-full object-cover" /></div>
         </div>
       </section>
 
@@ -59,7 +59,7 @@ export default async function MaisonPage() {
         </div>
       </section>
 
-      <CTASection />
+      <CTASection secondary={{ href: '/creations/tartes-alpines', label: 'Découvrir nos tartes alpines' }} />
     </>
   )
 }

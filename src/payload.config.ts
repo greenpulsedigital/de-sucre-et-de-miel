@@ -15,6 +15,7 @@ import { Testimonials } from './collections/Testimonials'
 import { Requests } from './collections/Requests'
 import { RequestFiles } from './collections/RequestFiles'
 import { SiteSettings } from './globals/SiteSettings'
+import { migrations } from './migrations'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -47,6 +48,10 @@ export default buildConfig({
   db: sqliteAdapter({
     client: { url: databaseUrl() },
     push: process.env.NODE_ENV !== 'production',
+    // Production Infomaniak (DB_MIGRATIONS=1) : schéma créé et mis à jour par les migrations, appliquées au build
+    // et au démarrage. Sans ce drapeau (dev, démos Vercel/Fly), la base reste gérée par push, comme avant.
+    // Après un changement de collection : `pnpm payload migrate:create <nom>`.
+    prodMigrations: process.env.DB_MIGRATIONS ? migrations : undefined,
     transactionOptions: {},
   }),
   sharp,

@@ -1,4 +1,6 @@
+import path from 'node:path'
 import type { CollectionConfig } from 'payload'
+import { MEDIA_DIR } from '@/lib/storage'
 
 // Photos d'inspiration jointes aux demandes : jamais publiques.
 export const RequestFiles: CollectionConfig = {
@@ -12,7 +14,7 @@ export const RequestFiles: CollectionConfig = {
     delete: ({ req }) => Boolean(req.user),
   },
   upload: {
-    staticDir: 'media/private',
+    staticDir: path.join(MEDIA_DIR, 'private'),
     mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
   },
   fields: [],
