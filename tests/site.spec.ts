@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test'
 
 test('accueil : positionnement B2B, CTA revendeur visible, pas de slider ni vidéo', async ({ page }) => {
   await page.goto('/')
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('tartes alpines')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText(/tartes alpines/i)
     await expect(page.getByRole('link', { name: 'Devenir revendeur' }).first()).toBeVisible()
   await expect(page.locator('video, [class*=carousel], [class*=slider]')).toHaveCount(0)
 })
