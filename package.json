@@ -12,6 +12,7 @@
     "generate:importmap": "payload generate:importmap",
     "generate:types": "payload generate:types",
     "seed": "tsx scripts/seed.ts",
+    "mail:check": "tsx scripts/check-mail.ts",
     "test:e2e": "playwright test"
   },
   "engines": {
